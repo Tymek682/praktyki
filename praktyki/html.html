@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Sklep Wędkarski - Produkty</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .filtry { display: flex; gap: 10px; margin-bottom: 20px; align-items: center; }
+        input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 8px 16px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        .karta { border: 1px solid #eee; padding: 12px; margin-bottom: 10px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .cena { font-weight: bold; color: #28a745; }
+    </style>
+</head>
+<body>
+
+    <h1>Katalog Sprzętu Wędkarskiego</h1>
+
+    <div class="filtry">
+        <input type="text" id="filtrNazwa" placeholder="Szukaj po nazwie (np. Wędka)">
+        <input type="number" id="filtrCena" placeholder="Cena do (zł)" step="0.01">
+        <button onclick="pobierzProdukty()">Filtruj</button>
+        <button onclick="resetujFiltry()" style="background-color: #6c757d;">Wyczyść</button>
+    </div>
+
+    <div id="listaProduktow">
+        Ładowanie produktów...
+    </div>
+
+    <script>
+        async function pobierzProdukty() {
+            const nazwa = document.getElementById('filtrNazwa').value;
+            const cenaMax = document.getElementById('filtrCena').value;
+
+            // Tworzymy adres URL z parametrami zapytania
+            const params = new URLSearchParams();
+            if (nazwa) params.append('nazwa', nazwa);
+            if (cenaMax) params.append('cena_max', cenaMax);
+
+            try {
+                const odp = await fetch(`/api/produkty?${params.toString()}`);
+                const produkty = await odp.json();
+
+                const kontener = document.getElementById('listaProduktow');
+                kontener.innerHTML = '';
+
+                if (produkty.length === 0) {
+                    kontener.innerHTML = '<p>Brak produktów spełniających kryteria.</p>';
+                    return;
+                }
+
+                produkty.forEach(p => {
+                    const div = document.createElement('div');
+                    div.className = 'karta';
+                    div.innerHTML = `
+                        <h3>${p.nazwa}</h3>
+                        <p class="cena">${p.cena.toFixed(2)} zł</p>
+                        <p>${p.opis || ''}</p>
+                    `;
+                    kontener.appendChild(div);
+                });
+            } catch (blad) {
+                console.error('Błąd pobierania danych:', blad);
+            }
+        }
+
+        function resetujFiltry() {
+            document.getElementById('filtrNazwa').value = '';
+            document.getElementById('filtrCena').value = '';
+            pobierzProdukty();
+        }
+
+        // Załaduj wszystkie produkty na start
+        pobierzProdukty();
+    </script>
+</body>
+</html>
