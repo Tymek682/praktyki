@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "nazwa": "Wędka Spinningowa Pro",
+    "opis": "Lekka i wytrzymała wędka idealna na szczupaki i okonie. Wykonana z włókna węglowego.",
+    "cena": 299.99,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 2,
+    "nazwa": "Kołowrotek Karpiowy 5000",
+    "opis": "Niezawodny kołowrotek z wolnym biegiem, dużym nawijaniem i precyzyjnym hamulcem.",
+    "cena": 189.50,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 3,
+    "nazwa": "Zestaw Przynęt Gumowych",
+    "opis": "Komplet 20 sztuk skutecznych twisterów i ripperów w różnych atrakcyjnych kolorach.",
+    "cena": 45.00,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 4,
+    "nazwa": "Krzesło Wędkarskie Składane",
+    "opis": "Wygodne, stabilne krzesło z oparciem i praktycznym uchwytem na kubek.",
+    "cena": 120.00,
+    "kategoria": "Akcesoria",
+    "dostepnosc": false
+  },
+  {
+    "id": 5,
+    "nazwa": "Podbierak Teleskopowy",
+    "opis": "Gumowana siatka chroniąca rybę przed uszkodzeniem, łatwa w czyszczeniu i szybkoschnąca.",
+    "cena": 85.99,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 6,
+    "nazwa": "Żyłka Wędkarska 0.25mm",
+    "opis": "Wytrzymała żyłka główna o długości 150m, o małej pamięci kształtu i dużej odporności na przetarcia.",
+    "cena": 24.99,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  }
+]
