@@ -2,15 +2,139 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sklep Wędkarski - Produkty</title>
     <style>
-        body { font-family: sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
-        .filtry { display: flex; gap: 10px; margin-bottom: 20px; align-items: center; }
-        input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
-        button { padding: 8px 16px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
-        button:hover { background-color: #0056b3; }
-        .karta { border: 1px solid #eee; padding: 12px; margin-bottom: 10px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .cena { font-weight: bold; color: #28a745; }
+        :root {
+            --primary: #0284c7;
+            --primary-hover: #0369a1;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --accent: #10b981;
+            --border-radius: 8px;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 2rem 1rem; 
+            background-color: var(--bg-color);
+            color: var(--text-main);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #0f172a;
+            font-size: 2rem;
+        }
+
+        .filtry { 
+            display: flex; 
+            gap: 12px; 
+            margin-bottom: 30px; 
+            align-items: center; 
+            justify-content: center;
+            flex-wrap: wrap;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        input { 
+            padding: 10px 14px; 
+            border: 1px solid #cbd5e1; 
+            border-radius: var(--border-radius); 
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
+        }
+
+        button { 
+            padding: 10px 20px; 
+            background-color: var(--primary); 
+            color: white; 
+            border: none; 
+            border-radius: var(--border-radius); 
+            cursor: pointer; 
+            font-weight: 600;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        button:hover { 
+            background-color: var(--primary-hover); 
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .btn-secondary {
+            background-color: #64748b;
+        }
+
+        .btn-secondary:hover {
+            background-color: #475569;
+        }
+
+        #listaProduktow {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .karta { 
+            background: var(--card-bg);
+            border: 1px solid #e2e8f0; 
+            padding: 20px; 
+            border-radius: var(--border-radius); 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02); 
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .karta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        .karta h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.25rem;
+            color: #0f172a;
+        }
+
+        .karta p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .cena { 
+            font-size: 1.2rem;
+            font-weight: bold; 
+            color: var(--accent); 
+        }
+
+        .komunikat {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: var(--text-muted);
+            padding: 40px;
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body>
@@ -20,59 +144,81 @@
     <div class="filtry">
         <input type="text" id="filtrNazwa" placeholder="Szukaj po nazwie (np. Wędka)">
         <input type="number" id="filtrCena" placeholder="Cena do (zł)" step="0.01">
-        <button onclick="pobierzProdukty()">Filtruj</button>
-        <button onclick="resetujFiltry()" style="background-color: #6c757d;">Wyczyść</button>
+        <button onclick="filtrujProdukty()">Filtruj</button>
+        <button onclick="resetujFiltry()" class="btn-secondary">Wyczyść</button>
     </div>
 
     <div id="listaProduktow">
-        Ładowanie produktów...
+        Ładowanie produktów z pliku JSON...
     </div>
 
     <script>
-        async function pobierzProdukty() {
-            const nazwa = document.getElementById('filtrNazwa').value;
-            const cenaMax = document.getElementById('filtrCena').value;
+        // Zmienna do przechowywania pobranych danych
+        let wszystkieProdukty = [];
 
-            // Tworzymy adres URL z parametrami zapytania
-            const params = new URLSearchParams();
-            if (nazwa) params.append('nazwa', nazwa);
-            if (cenaMax) params.append('cena_max', cenaMax);
-
+        // Funkcja pobierająca dane za pomocą fetch()
+        async function pobierzProduktyZPliku() {
+            const kontener = document.getElementById('listaProduktow');
+            
             try {
-                const odp = await fetch(`/api/produkty?${params.toString()}`);
-                const produkty = await odp.json();
-
-                const kontener = document.getElementById('listaProduktow');
-                kontener.innerHTML = '';
-
-                if (produkty.length === 0) {
-                    kontener.innerHTML = '<p>Brak produktów spełniających kryteria.</p>';
-                    return;
+                const odpowiedz = await fetch('bazawedek.json');
+                
+                if (!odpowiedz.ok) {
+                    throw new Error(`Błąd HTTP: ${odpowiedz.status}`);
                 }
 
-                produkty.forEach(p => {
-                    const div = document.createElement('div');
-                    div.className = 'karta';
-                    div.innerHTML = `
-                        <h3>${p.nazwa}</h3>
-                        <p class="cena">${p.cena.toFixed(2)} zł</p>
-                        <p>${p.opis || ''}</p>
-                    `;
-                    kontener.appendChild(div);
-                });
+                wszystkieProdukty = await odpowiedz.json();
+                wyswietlProdukty(wszystkieProdukty);
+
             } catch (blad) {
-                console.error('Błąd pobierania danych:', blad);
+                console.error('Wystąpił błąd:', blad);
+                kontener.innerHTML = `<div class="komunikat" style="color: #ef4444;">Nie udało się wczytać pliku produkty.</div>`;
             }
         }
 
+        // Funkcja renderująca karty produktów na stronie
+        function wyswietlProdukty(produkty) {
+            const kontener = document.getElementById('listaProduktow');
+            
+            if (produkty.length === 0) {
+                kontener.innerHTML = '<div class="komunikat">Brak produktów spełniających kryteria.</div>';
+                return;
+            }
+
+            kontener.innerHTML = produkty.map(p => `
+                <div class="karta">
+                    <div>
+                        <h3>${p.nazwa}</h3>
+                        <p>${p.opis}</p>
+                    </div>
+                    <div class="cena">${Number(p.cena).toFixed(2)} zł</div>
+                </div>
+            `).join('');
+        }
+
+        // Filtrowanie produktów
+        function filtrujProdukty() {
+            const nazwaSzukana = document.getElementById('filtrNazwa').value.toLowerCase();
+            const cenaMaksymalna = parseFloat(document.getElementById('filtrCena').value);
+
+            const przefiltrowane = wszystkieProdukty.filter(p => {
+                const pasujeNazwa = p.nazwa.toLowerCase().includes(nazwaSzukana);
+                const pasujeCena = isNaN(cenaMaksymalna) || p.cena <= cenaMaksymalna;
+                return pasujeNazwa && pasujeCena;
+            });
+
+            wyswietlProdukty(przefiltrowane);
+        }
+
+        // Resetowanie filtrów
         function resetujFiltry() {
             document.getElementById('filtrNazwa').value = '';
             document.getElementById('filtrCena').value = '';
-            pobierzProdukty();
+            wyswietlProdukty(wszystkieProdukty);
         }
 
-        // Załaduj wszystkie produkty na start
-        pobierzProdukty();
+        // Uruchomienie ładowania po załadowaniu strony
+        window.onload = pobierzProduktyZPliku;
     </script>
 </body>
 </html>
