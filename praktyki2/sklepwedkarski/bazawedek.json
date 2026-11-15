@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "nazwa": "Wędka Spinningowa Pro",
+    "opis": "Lekka i wytrzymała wędka idealna na szczupaki i okonie. Wykonana z włókna węglowego.",
+    "cena": 299.99,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 2,
+    "nazwa": "Wędka Karpiowa Magnum 3.6m",
+    "opis": "Mocna trzyczęściowa wędka karpiowa o krzywej ugięcia 3.5lbs do dalekich rzutów.",
+    "cena": 349.0,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 3,
+    "nazwa": "Wędka Feeder Master 3.9m",
+    "opis": "Wędka gruntowa z trzema wymiennymi szczytówkami węglowymi o różnej czułości.",
+    "cena": 279.5,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 4,
+    "nazwa": "Wędka Spławikowa Tele-Float 4.2m",
+    "opis": "Lekka teleskopowa wędka spławikowa do połowu białej ryby na jeziorach.",
+    "cena": 149.99,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 5,
+    "nazwa": "Wędka Okoniowa UltraLight 2.1m",
+    "opis": "Niezwykle czuła wklejanka o ciężarze wyrzutu 1-7g na okonie i pstrągi.",
+    "cena": 219.0,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 6,
+    "nazwa": "Wędka Szczupakowa Predator 2.7m",
+    "opis": "Sztywny kij spinningowy 15-45g stworzony do prowadzenia dużych woblerów i gum.",
+    "cena": 319.0,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 7,
+    "nazwa": "Wędka Sumowa Monster Cat 2.8m",
+    "opis": "Ekstremalnie wytrzymałe wędzisko z włókna kompozytowego na największe sumy.",
+    "cena": 420.0,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 8,
+    "nazwa": "Wędka Method Feeder Pro 3.3m",
+    "opis": "Paraboliczna wędka zaprojektowana specjalnie specjalnie do techniki Method Feeder.",
+    "cena": 259.0,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 9,
+    "nazwa": "Wędka Matchowa Distance 4.2m",
+    "opis": "Klasyczna trzyskładowa odległościówka do łowienia spławikiem typu waggler.",
+    "cena": 289.0,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 10,
+    "nazwa": "Wędka Podlodowa Ice Hunter 60cm",
+    "opis": "Krótka wędka zimowa z czułą szczytówką do połowu na mormyszkę i błystkę.",
+    "cena": 49.99,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 11,
+    "nazwa": "Wędka Bolonka River 5.0m",
+    "opis": "Długa wędka z przelotkami do prowadzenia spławika w nurcie rzeki.",
+    "cena": 235.0,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 12,
+    "nazwa": "Wędka Bat Teleskopowy 6.0m",
+    "opis": "Szybki bat bezprzelotkowy do dynamicznego połowu płoci i leszczy.",
+    "cena": 165.0,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 13,
+    "nazwa": "Wędka Sandaczowa Zander Jig 2.4m",
+    "opis": "Bardzo szybka wędka o akcji X-Fast pozwalająca wyczuć najdelikatniejsze branie z opadu.",
+    "cena": 389.0,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 14,
+    "nazwa": "Wędka Pstrągowa Trout Stream 1.98m",
+    "opis": "Krótki, precyzyjny spinning do łowienia w małych, zakrzaczonych rzekach.",
+    "cena": 245.0,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 15,
+    "nazwa": "Wędka Morska Baltic Pilk 2.4m",
+    "opis": "Wędka dorszowa odporna na słoną wodę, ciężar wyrzutu do 200g.",
+    "cena": 295.0,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 16,
+    "nazwa": "Wędka Castingowa Jerkbait 1.95m",
+    "opis": "Sztywna wędka pod multiplikator do szarpania ciężkich jerków szczupakowych.",
+    "cena": 330.0,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 17,
+    "nazwa": "Wędka Karpiowa Stalker 3.0m",
+    "opis": "Krótka wędka karpiowa do łowienia z podchodu i wywózki pontonem.",
+    "cena": 269.0,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 18,
+    "nazwa": "Wędka Picker Light 2.7m",
+    "opis": "Delikatna wędka z drgającą szczytówką na wody stojące i kanały.",
+    "cena": 179.0,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 19,
+    "nazwa": "Wędka Muchowa Fly Classic 2.7m",
+    "opis": "Wędzisko muchowe w klasie AFTM #5 do suchej i mokrej muchy.",
+    "cena": 359.0,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 20,
+    "nazwa": "Wędka Turystyczna Travel Spin 2.4m",
+    "opis": "Czteroczęściowy spinning mieszczący się w plecaku lub walizce.",
+    "cena": 229.0,
+    "kategoria": "Wędki",
+    "dostepnosc": true
+  },
+  {
+    "id": 21,
+    "nazwa": "Kołowrotek Karpiowy 5000",
+    "opis": "Niezawodny kołowrotek z wolnym biegiem, dużym nawijaniem i precyzyjnym hamulcem.",
+    "cena": 189.5,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 22,
+    "nazwa": "Kołowrotek Spinningowy Pro 2500",
+    "opis": "Lekki kołowrotek z aluminiową szpulą i 6 łożyskami kulkowymi.",
+    "cena": 159.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 23,
+    "nazwa": "Kołowrotek Feederowy Distance 4000",
+    "opis": "Płytka szpula typu Long Cast ułatwiająca dalekie i celne rzuty koszyczkiem.",
+    "cena": 215.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 24,
+    "nazwa": "Kołowrotek Okoniowy Micro 1000",
+    "opis": "Ultralekki kołowrotek z precyzyjnym hamulcem przednim do cienkich plecionek.",
+    "cena": 139.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 25,
+    "nazwa": "Kołowrotek Karpiowy Big Pit 8000",
+    "opis": "Ogromny kołowrotek z przekładnią ślimakową do wywózki na dużych zbiornikach.",
+    "cena": 349.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 26,
+    "nazwa": "Kołowrotek Spławikowy Match 3000",
+    "opis": "Szybkie przełożenie 6.2:1 pozwalające błyskawicznie zwijać zestaw z dużej odległości.",
+    "cena": 169.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 27,
+    "nazwa": "Kołowrotek Sumowy Heavy Duty 7000",
+    "opis": "Wzmocniona metalowa obudowa i stalowa oś odporna na ekstremalne przeciążenia.",
+    "cena": 399.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 28,
+    "nazwa": "Multiplikator Niskoprofilowy Cast Pro",
+    "opis": "Multiplikator z magnetycznym hamulcem rzutowym na szczupaki i sandacze.",
+    "cena": 289.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 29,
+    "nazwa": "Kołowrotek z Tylnym Hamulcem Classic 3000",
+    "opis": "Uniwersalny kołowrotek spławikowo-gruntowy z szybką regulacją hamulca.",
+    "cena": 99.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 30,
+    "nazwa": "Kołowrotek Method Feeder 4500",
+    "opis": "Wyposażony w dwa metalowe klipsy na szpuli do zaznaczania dystansu łowienia.",
+    "cena": 229.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 31,
+    "nazwa": "Kołowrotek Morski Saltwater 6000",
+    "opis": "Uszczelnione łożyska odporne na korozję i działanie słonej wody morskiej.",
+    "cena": 310.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 32,
+    "nazwa": "Kołowrotek Spinningowy Carbon 3000",
+    "opis": "Rotor i korpus z kompozytu węglowego zapewniające niską wagę i sztywność.",
+    "cena": 249.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 33,
+    "nazwa": "Kołowrotek Podlodowy Ice Reel",
+    "opis": "Mały kołowrotek odporny na zamarzanie smaru w niskich temperaturach.",
+    "cena": 55.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 34,
+    "nazwa": "Kołowrotek Muchowy Fly Alu #5/6",
+    "opis": "Wycinany maszynowo z aluminium kołowrotek muchowy z płynnym hamulcem.",
+    "cena": 195.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 35,
+    "nazwa": "Kołowrotek Wolny Bieg Baitrunner 4000",
+    "opis": "Świetny wybór na sandacza z gruntu oraz mniejsze karpie i liny.",
+    "cena": 175.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 36,
+    "nazwa": "Kołowrotek Sandaczowy Power Spin 4000",
+    "opis": "Mocna przekładnia dostosowana do ciężkich główek jigowych.",
+    "cena": 265.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 37,
+    "nazwa": "Kołowrotek Pstrągowy Finesse 2000",
+    "opis": "Płynny start hamulca chroniący cienkie żyłki przed zerwaniem podczas holu.",
+    "cena": 209.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 38,
+    "nazwa": "Multiplikator Morski Trolling 400",
+    "opis": "Wyposażony w licznik głębokości w metrach do połowu z łodzi.",
+    "cena": 329.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 39,
+    "nazwa": "Kołowrotek Uniwersalny Starter 2000",
+    "opis": "Budżetowy kołowrotek z nawiniętą żyłką dla początkujących wędkarzy.",
+    "cena": 69.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 40,
+    "nazwa": "Kołowrotek Karpiowy Camo 6000",
+    "opis": "Wykończenie w barwach maskujących i system wolnego biegu szpuli.",
+    "cena": 239.0,
+    "kategoria": "Kołowrotki",
+    "dostepnosc": true
+  },
+  {
+    "id": 41,
+    "nazwa": "Zestaw Przynęt Gumowych",
+    "opis": "Komplet 20 sztuk skutecznych twisterów i ripperów w różnych atrakcyjnych kolorach.",
+    "cena": 45.0,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 42,
+    "nazwa": "Wobler Pływający Szczupak 10cm",
+    "opis": "Realistyczna imitacja płoci o agresywnej pracy bocznej, schodzi do 2m.",
+    "cena": 32.0,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 43,
+    "nazwa": "Wobler Tonący Okoń 5cm",
+    "opis": "Drobny wobler z grzechotką na okonie, klenie i pstrągi.",
+    "cena": 24.5,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 44,
+    "nazwa": "Błystka Obrotowa Srebrna Nr 3",
+    "opis": "Klasyczna obrotówka z czerwonym chwościkiem na szczupaki i okonie.",
+    "cena": 12.99,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 45,
+    "nazwa": "Wahadłówka Klasyczna Mors 22g",
+    "opis": "Legendarna polska błystka wahadłowa o szerokiej pracy na szczupaka.",
+    "cena": 16.5,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 46,
+    "nazwa": "Kulki Proteinowe Truskawka 1kg",
+    "opis": "Tonące kulki karpiowe o intensywnym słodkim aromacie truskawki.",
+    "cena": 34.99,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 47,
+    "nazwa": "Kulki Pop-Up Ananas 12mm",
+    "opis": "Pływające jaskrawe kulki proteinowe do zestawów Chod Rig i Ronnie Rig.",
+    "cena": 22.0,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 48,
+    "nazwa": "Pellet Haczykowy Halibut 8mm",
+    "opis": "Tłusty pellet z otworem do szybkiego montażu na włosie, waga 500g.",
+    "cena": 18.9,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 49,
+    "nazwa": "Zanęta Leszcz Sekret 2kg",
+    "opis": "Słodka zanęta korzenno-piernikowa przyciągająca duże leszcze.",
+    "cena": 19.5,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 50,
+    "nazwa": "Method Mix Krill 1kg",
+    "opis": "Drobno mielona zanęta wysokobiałkowa idealnie klejąca się do podajnika.",
+    "cena": 23.0,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 51,
+    "nazwa": "Jaskółka Sandaczowa 9cm (10 szt.)",
+    "opis": "Miękkie przynęty do metody Drop Shot i łowienia w opadzie.",
+    "cena": 21.0,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 52,
+    "nazwa": "Jerkbait Bezsterowy Slider 10cm",
+    "opis": "Przynęta szybowcowa na płytkie, zarośnięte zatoki szczupakowe.",
+    "cena": 42.0,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 53,
+    "nazwa": "Wobler Kleniowo-Jaziowy Smużak 3cm",
+    "opis": "Imitacja owada pracująca tuż pod powierzchnią wody na przelewach.",
+    "cena": 26.0,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 54,
+    "nazwa": "Ripper Szczupakowy Perła 12cm (5 szt.)",
+    "opis": "Klasyczne kopyto z szerokim ogonem generujące silną falę hydroakustyczną.",
+    "cena": 19.99,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 55,
+    "nazwa": "Wirujący Ogonek Spinmad 10g",
+    "opis": "Dalekosiężna przynęta z wirującym skrzydełkiem na okonie i bolenie.",
+    "cena": 25.0,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 56,
+    "nazwa": "Wobler Boleniowy Ukleja 7cm",
+    "opis": "Ciężki, wąski wobler do ekspresowego prowadzenia w warkoczach rzecznych.",
+    "cena": 31.0,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 57,
+    "nazwa": "Dumbellsy Wafters Czosnek 8mm",
+    "opis": "Zbalansowane przynęty do Method Feeder o wyrazistym zapachu czosnku.",
+    "cena": 21.5,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 58,
+    "nazwa": "Kukurydza Konserwowa Miód 300g",
+    "opis": "Duże, selektywne ziarna kukurydzy w słodkiej zalewie miodowej.",
+    "cena": 9.99,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 59,
+    "nazwa": "Liquid Booster Kałamarnica 250ml",
+    "opis": "Gęsty zalewacz do pelletu, ziaren i zanęt nie rozpuszczający materiałów PVA.",
+    "cena": 27.0,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 60,
+    "nazwa": "Zestaw Much Wędkarskich (12 szt.)",
+    "opis": "Pudełeczko z ręcznie wiązanymi suchymi muchami i nimfami na pstrąga i lipienia.",
+    "cena": 49.0,
+    "kategoria": "Przynęty",
+    "dostepnosc": true
+  },
+  {
+    "id": 61,
+    "nazwa": "Żyłka Wędkarska 0.25mm",
+    "opis": "Wytrzymała żyłka główna o długości 150m, o małej pamięci kształtu i dużej odporności na przetarcia.",
+    "cena": 24.99,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 62,
+    "nazwa": "Plecionka 8-splotowa Zielona 0.14mm",
+    "opis": "Idealnie okrągła i cicha na przelotkach plecionka spinningowa 150m.",
+    "cena": 69.0,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 63,
+    "nazwa": "Żyłka Karpiowa Camo 0.32mm 600m",
+    "opis": "Duża szpula żyłki tonącej o podwyższonej odporności na przetarcia o zaczepy.",
+    "cena": 54.0,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 64,
+    "nazwa": "Fluorocarbon Przyponowy 0.40mm 25m",
+    "opis": "Niewidoczny w wodzie materiał przyponowy odporny na drobne zęby drapieżników.",
+    "cena": 29.0,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 65,
+    "nazwa": "Żyłka Przyponowa Competition 0.12mm",
+    "opis": "Bardzo precyzyjnie kalibrowana żyłka na przypony spławikowe i feederowe 50m.",
+    "cena": 16.5,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 66,
+    "nazwa": "Plecionka Okoniowa Fluo 0.08mm",
+    "opis": "Jaskrawa żółta plecionka ułatwiająca obserwację brania z opadu 135m.",
+    "cena": 59.0,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 67,
+    "nazwa": "Żyłka Feederowa Tonąca 0.22mm 200m",
+    "opis": "Ciemnobrązowa żyłka o niskiej rozciągliwości sygnalizująca każde skubnięcie.",
+    "cena": 26.0,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 68,
+    "nazwa": "Plecionka Sumowa Monster 0.50mm 250m",
+    "opis": "Ekstremalnie mocna plecionka o wytrzymałości 55kg na rekordowe okazy.",
+    "cena": 95.0,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 69,
+    "nazwa": "Żyłka Spławikowa Match 0.18mm 150m",
+    "opis": "Miękka żyłka szybko tonąca pod powierzchnią wody do metody odległościowej.",
+    "cena": 21.0,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 70,
+    "nazwa": "Fluorocarbon Szczupakowy 0.70mm 10m",
+    "opis": "Gruby fluorocarbon zastępujący stalowe stalki przy łowieniu dużych szczupaków.",
+    "cena": 38.0,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 71,
+    "nazwa": "Plecionka Przyponowa Karpiowa 25lbs",
+    "opis": "Miękka tonąca plecionka w kolorze mułu do wiązania przyponów włosowych 20m.",
+    "cena": 34.0,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 72,
+    "nazwa": "Żyłka Zimowa Ice Line 0.10mm 50m",
+    "opis": "Żyłka podlodowa zachowująca elastyczność nawet przy dużym mrozie.",
+    "cena": 12.5,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 73,
+    "nazwa": "Plecionka 4-splotowa Szara 0.16mm 150m",
+    "opis": "Odporna na przetarcia o kamienie i muszle plecionka na rzekę.",
+    "cena": 44.0,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 74,
+    "nazwa": "Żyłka Spinningowa Predator 0.28mm 150m",
+    "opis": "Niskorozciągliwa żyłka na szczupaka świetnie współpracująca z obrotówkami.",
+    "cena": 22.9,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 75,
+    "nazwa": "Żyłka Morska Surfcasting 0.35mm 300m",
+    "opis": "Odporna na sól morską i promienie UV żyłka do połowów z plaży.",
+    "cena": 39.0,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 76,
+    "nazwa": "Sznur Muchowy Pływający WF5F",
+    "opis": "Pływająca linka muchowa o profilu głowicowym ułatwiająca dalekie rzuty.",
+    "cena": 89.0,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 77,
+    "nazwa": "Strzałówka Konusowa Shockleader 0.26-0.57mm",
+    "opis": "Zestaw 5 odcinków żyłki strzałowej do dalekich rzutów ciężkimi zestawami.",
+    "cena": 35.0,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 78,
+    "nazwa": "Leadcore Karpiowy z Rdzeniem Ołowianym 10m",
+    "opis": "Ciężki materiał liderowy idealnie przylegający do dna łowiska.",
+    "cena": 36.0,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 79,
+    "nazwa": "Żyłka Pstrągowa Red 0.20mm 150m",
+    "opis": "Czerwona żyłka dobrze widoczna dla wędkarza nad wodą, a zanikająca w toni.",
+    "cena": 23.5,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 80,
+    "nazwa": "Stalka Wolframowa z Krętlikiem 25cm (10 szt.)",
+    "opis": "Wytrzymałe przypony wolframowe chroniące przed obcięciem przynęty przez szczupaka.",
+    "cena": 15.0,
+    "kategoria": "Żyłki",
+    "dostepnosc": true
+  },
+  {
+    "id": 81,
+    "nazwa": "Krzesło Wędkarskie Składane",
+    "opis": "Wygodne, stabilne krzesło z oparciem i praktycznym uchwytem na kubek.",
+    "cena": 120.0,
+    "kategoria": "Akcesoria",
+    "dostepnosc": false
+  },
+  {
+    "id": 82,
+    "nazwa": "Podbierak Teleskopowy",
+    "opis": "Gumowana siatka chroniąca rybę przed uszkodzeniem, łatwa w czyszczeniu i szybkoschnąca.",
+    "cena": 85.99,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 83,
+    "nazwa": "Pokrowiec na Wędki 3-komorowy 150cm",
+    "opis": "Usztywniany pokrowiec z szelkami i kieszeniami bocznymi na podpórki.",
+    "cena": 135.0,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 84,
+    "nazwa": "Skrzynka Wędkarska Dwupoziomowa",
+    "opis": "Pojemna skrzynka z regulowanymi przegródkami na przynęty, spławiki i drobiazgi.",
+    "cena": 65.0,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 85,
+    "nazwa": "Sygnalizator Brań Elektroniczny",
+    "opis": "Wodoodporny sygnalizator z regulacją głośności, tonu oraz czułości.",
+    "cena": 59.0,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 86,
+    "nazwa": "Mata Karpiowa Kołyska",
+    "opis": "Gruba, bezpieczna dla ryb mata odhaczająca z podwyższonymi bokami.",
+    "cena": 149.0,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 87,
+    "nazwa": "Zestaw Haczyków z Przyponami (10 szt.)",
+    "opis": "Gotowe zawiązane haczyki bezzadziorowe do Method Feeder z gumką na pellet.",
+    "cena": 14.5,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 88,
+    "nazwa": "Koszyczek Method Feeder 30g + Foremka",
+    "opis": "Zestaw 3 podajników zanętowych wraz z elastyczną foremką do ładowania.",
+    "cena": 29.0,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 89,
+    "nazwa": "Zestaw Spławików Wędkarskich (5 szt.)",
+    "opis": "Komplet czułych spławików przelotowych i stałych o wyporności od 1g do 4g.",
+    "cena": 24.0,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 90,
+    "nazwa": "Szczypce Wędkarskie Długie 22cm",
+    "opis": "Stalowe szczypce do bezpiecznego odhaczania szczupaków i zaciskania tulejek.",
+    "cena": 28.0,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 91,
+    "nazwa": "Waga Wędkarska Cyfrowa do 50kg",
+    "opis": "Podświetlany ekran LCD, funkcja tarowania i wbudowana miarka 1m.",
+    "cena": 39.0,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 92,
+    "nazwa": "Latarka Czołowa LED USB",
+    "opis": "Mocna czołówka z białym oraz czerwonym światłem niepłoszącym ryb w nocy.",
+    "cena": 49.0,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 93,
+    "nazwa": "Parasol Wędkarski z Osłoną Boczną 2.5m",
+    "opis": "Wodoodporny parasol z dopinanym bokiem chroniącym przed wiatrem i deszczem.",
+    "cena": 189.0,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 94,
+    "nazwa": "Podpórki Teleskopowe Aluminiowe (2 szt.)",
+    "opis": "Regulowane widełki z gwintem pod sygnalizatory brań lub grzebień feederowy.",
+    "cena": 32.0,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 95,
+    "nazwa": "Siatka na Ryby Długa 3.0m",
+    "opis": "Gęsta, szybkoschnąca siatka zawodnicza ze sztywnymi obręczami i regulacją kąta.",
+    "cena": 99.0,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 96,
+    "nazwa": "Pudełko Dwustronne na Woblery",
+    "opis": "Przezroczyste pudełko z systemem odprowadzania wody chroniącym kotwiczki przed rdzą.",
+    "cena": 34.0,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 97,
+    "nazwa": "Główki Jigowe Zestaw 3g-15g (25 szt.)",
+    "opis": "Komplet ostrych haków jigowych o różnej gramaturze w praktycznym pudełku.",
+    "cena": 42.0,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 98,
+    "nazwa": "Krętliki z Agrafką Wzmacniane (20 szt.)",
+    "opis": "Stalowe agrafki typu Cross-Lock o wytrzymałości do 25kg.",
+    "cena": 11.99,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 99,
+    "nazwa": "Ciężarki Ołowiane Śruciny Zestaw 100g",
+    "opis": "Okrągłe pudełko z naciętymi śrucinami o różnej wadze do wyważania spławika.",
+    "cena": 16.0,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  },
+  {
+    "id": 100,
+    "nazwa": "Okulary Polaryzacyjne Wędkarskie",
+    "opis": "Usuwają odblaski z tafli wody, pozwalając dostrzec ryby i strukturę dna.",
+    "cena": 79.0,
+    "kategoria": "Akcesoria",
+    "dostepnosc": true
+  }
+]

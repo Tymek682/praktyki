@@ -1,0 +1,1444 @@
+<!-- Kod wygenerowany przez AI -->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Złoty Haczyk – Profesjonalny Sklep Wędkarski</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #f1f5f9;
+            --bg-surface: #ffffff;
+            --bg-dark: #0f172a;
+            --bg-dark-2: #1e293b;
+            --primary: #0284c7;
+            --primary-hover: #0369a1;
+            --primary-light: #e0f2fe;
+            --accent: #10b981;
+            --accent-hover: #059669;
+            --danger: #ef4444;
+            --danger-light: #fee2e2;
+            --text-main: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --border: #e2e8f0;
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+            --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+            --shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.14);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+
+        /* ==================== GÓRNY PASEK NAWIGACJI ==================== */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .topbar-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .brand-logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #0284c7, #0f172a);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            box-shadow: 0 6px 14px rgba(2, 132, 199, 0.3);
+        }
+
+        .brand-text span {
+            display: block;
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .brand-text small {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 9px 15px;
+            border-radius: 999px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .nav-links a.aktywna {
+            background: var(--bg-dark);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 16px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            transition: all 0.2s ease;
+            border: 1px solid var(--border);
+            background: var(--bg-surface);
+            color: var(--text-main);
+        }
+
+        .nav-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        .nav-btn.aktywna {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .nav-btn-cart {
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: white !important;
+            border: none;
+            box-shadow: 0 6px 15px rgba(2, 132, 199, 0.28);
+        }
+
+        .cart-badge {
+            background: #ffffff;
+            color: var(--primary);
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            transition: transform 0.25s ease;
+        }
+
+        /* ==================== HERO BANNER ==================== */
+        .hero {
+            max-width: 1280px;
+            width: calc(100% - 48px);
+            margin: 24px auto 0;
+            background: radial-gradient(circle at 85% 20%, rgba(14, 165, 233, 0.35), transparent 45%),
+                        linear-gradient(125deg, #0f172a 0%, #0c4a6e 60%, #0369a1 100%);
+            border-radius: var(--radius-lg);
+            padding: 36px 42px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .hero-content { max-width: 640px; }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 { font-size: 2.1rem; font-weight: 800; margin-bottom: 6px; }
+        .hero p { color: #cbd5e1; font-size: 0.98rem; }
+
+        .hero-stats { display: flex; gap: 16px; flex-wrap: wrap; }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 14px 20px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .stat-box strong { display: block; font-size: 1.4rem; font-weight: 800; color: #38bdf8; }
+        .stat-box span { font-size: 0.78rem; color: #e2e8f0; }
+
+        /* ==================== GŁÓWNY KONTENER ==================== */
+        .main-container {
+            max-width: 1280px;
+            width: 100%;
+            margin: 28px auto 60px;
+            padding: 0 24px;
+            flex: 1;
+        }
+
+        /* ==================== FILTRY ==================== */
+        .filtry-bar {
+            background: var(--bg-surface);
+            padding: 18px 22px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 26px;
+        }
+
+        .filtry-inputs {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+
+        .input-wrapper { position: relative; flex: 1; min-width: 220px; }
+
+        .input-wrapper input, select, .std-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 0.92rem;
+            color: var(--text-main);
+            background: #f8fafc;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+
+        .input-wrapper input:focus, select:focus, .std-input:focus {
+            background: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
+        .btn-secondary { background: #e2e8f0; color: var(--text-secondary); }
+        .btn-secondary:hover { background: #cbd5e1; color: var(--text-main); }
+        .btn-success { background: linear-gradient(135deg, #10b981, #059669); color: white; }
+        .btn-danger { background: var(--danger-light); color: var(--danger); padding: 8px 14px; font-size: 0.82rem; }
+        .btn-danger:hover { background: var(--danger); color: white; }
+
+        .liczba-wynikow {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            background: #f1f5f9;
+            padding: 8px 14px;
+            border-radius: 999px;
+        }
+
+        /* ==================== SIATKA PRODUKTÓW ==================== */
+        #listaProduktow {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+            gap: 22px;
+        }
+
+        .karta {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .karta:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: #bae6fd;
+        }
+
+        .karta-wizual {
+            height: 115px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wizual-wedki { background: linear-gradient(135deg, #e0f2fe, #bae6fd); color: #0369a1; }
+        .wizual-kolowrotki { background: linear-gradient(135deg, #ede9fe, #ddd6fe); color: #5b21b6; }
+        .wizual-przynety { background: linear-gradient(135deg, #fef3c7, #fde68a); color: #b45309; }
+        .wizual-zylki { background: linear-gradient(135deg, #dcfce7, #bbf7d0); color: #15803d; }
+        .wizual-akcesoria { background: linear-gradient(135deg, #f1f5f9, #e2e8f0); color: #334155; }
+
+        .kategoria-pill {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .status-dot { width: 7px; height: 7px; border-radius: 50%; }
+        .status-ok { color: #047857; }
+        .status-ok .status-dot { background: #10b981; }
+        .status-brak { color: #b91c1c; }
+        .status-brak .status-dot { background: #ef4444; }
+
+        .karta-ikona {
+            position: absolute;
+            right: 16px;
+            bottom: -8px;
+            font-size: 4.2rem;
+            opacity: 0.22;
+            transform: rotate(-12deg);
+        }
+
+        .karta-body { padding: 20px; flex: 1; }
+        .karta-body h3 { font-size: 1.08rem; font-weight: 800; margin-bottom: 8px; }
+        .karta-body p { color: var(--text-secondary); font-size: 0.88rem; }
+
+        .karta-footer {
+            padding: 16px 20px;
+            border-top: 1px solid #f1f5f9;
+            background: #fafaf9;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cena-blok small { display: block; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
+        .cena { font-size: 1.3rem; font-weight: 800; color: var(--text-main); }
+
+        .btn-add-cart {
+            padding: 10px 16px;
+            border-radius: 10px;
+            background: var(--bg-dark);
+            color: white;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-add-cart:hover { background: var(--primary); transform: scale(1.03); }
+
+        /* ==================== PANELE, KOSZYK I PODSTRONY INFO ==================== */
+        .koszyk-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .koszyk-grid { grid-template-columns: 1fr; }
+            .hero { flex-direction: column; align-items: flex-start; padding: 28px; }
+        }
+
+        .panel-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .panel-card h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 6px; }
+        .panel-card h3 { font-size: 1.1rem; font-weight: 700; margin: 20px 0 8px; color: var(--primary); }
+        .panel-subtitle { color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 20px; }
+        .formularz-grupa { display: flex; flex-direction: column; gap: 14px; }
+
+        .podsumowanie-wiersz {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .podsumowanie-suma {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 0;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .admin-login-box {
+            max-width: 440px;
+            margin: 20px auto;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 36px 32px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .admin-lock-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .admin-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+
+        .admin-stat-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 20px 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .admin-stat-card span { font-size: 0.82rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; }
+        .admin-stat-card strong { display: block; font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin-top: 4px; }
+
+        /* ==================== TABELE ==================== */
+        .table-wrap {
+            overflow-x: auto;
+            margin-top: 14px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+        }
+
+        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; background: white; }
+        th {
+            background: #f8fafc;
+            color: var(--text-secondary);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            padding: 13px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        td { padding: 13px 16px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: #f8fafc; }
+
+        /* ==================== POWIADOMIENIA TOAST ==================== */
+        #toastKontener {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 380px;
+            width: calc(100% - 48px);
+            pointer-events: none;
+        }
+
+        .toast {
+            pointer-events: auto;
+            background: rgba(15, 23, 42, 0.96);
+            backdrop-filter: blur(12px);
+            color: #ffffff;
+            padding: 16px 18px;
+            border-radius: 16px;
+            box-shadow: 0 20px 35px -5px rgba(15, 23, 42, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            position: relative;
+            overflow: hidden;
+            animation: toastSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .toast.ukryj { animation: toastSlideOut 0.3s ease forwards; }
+
+        .toast-ikona {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .toast-sukces .toast-ikona { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+        .toast-blad .toast-ikona { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+        .toast-tytul { font-weight: 800; font-size: 0.92rem; color: #f8fafc; }
+        .toast-opis { font-size: 0.82rem; color: #cbd5e1; }
+
+        .toast-pasek {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #38bdf8, #10b981);
+            animation: toastProgress 3.2s linear forwards;
+        }
+
+        @keyframes toastSlideIn { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes toastSlideOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(15px); } }
+        @keyframes toastProgress { from { width: 100%; } to { width: 0%; } }
+
+        /* ==================== ROZBUDOWANA STOPKA ==================== */
+        .site-footer {
+            background: var(--bg-dark);
+            color: #94a3b8;
+            padding: 56px 24px 28px;
+            margin-top: auto;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 36px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        @media (max-width: 850px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .footer-col h4 {
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-col p {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: #94a3b8;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: color 0.2s ease, transform 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-links a:hover {
+            color: #38bdf8;
+            transform: translateX(3px);
+        }
+
+        .footer-admin-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            padding: 8px 14px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            color: #e2e8f0 !important;
+            font-weight: 600;
+        }
+
+        .footer-admin-link:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white !important;
+        }
+
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 24px auto 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 0.82rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="toastKontener"></div>
+
+    <!-- GÓRNY PASEK NAWIGACJI (BEZ PRZYCISKU ADMINA) -->
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="/" class="brand">
+                <div class="brand-logo">🎣</div>
+                <div class="brand-text">
+                    <span>Złoty Haczyk</span>
+                    <small>Centrum Sprzętu Wędkarskiego</small>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="/" class="{{ 'aktywna' if wybrana_kategoria == 'Wszystkie' else '' }}">Wszystkie</a>
+                <a href="/wedki" class="{{ 'aktywna' if wybrana_kategoria == 'Wędki' else '' }}">Wędki</a>
+                <a href="/kolowrotki" class="{{ 'aktywna' if wybrana_kategoria == 'Kołowrotki' else '' }}">Kołowrotki</a>
+                <a href="/przynety" class="{{ 'aktywna' if wybrana_kategoria == 'Przynęty' else '' }}">Przynęty</a>
+                <a href="/zylki" class="{{ 'aktywna' if wybrana_kategoria == 'Żyłki' else '' }}">Żyłki</a>
+                <a href="/akcesoria" class="{{ 'aktywna' if wybrana_kategoria == 'Akcesoria' else '' }}">Akcesoria</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="/logowanie" class="nav-btn {{ 'aktywna' if widok == 'logowanie' else '' }}">👤 Konto klienta</a>
+                <a href="/koszyk" class="nav-btn nav-btn-cart">
+                    🛒 Koszyk <span class="cart-badge" id="licznikKoszyka">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- BANER HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">Sklep Wędkarski Online</span>
+            <h1>
+                {% if widok == 'produkty' %}
+                    Kategoria: {{ wybrana_kategoria }}
+                {% elif widok == 'koszyk' %}
+                    Twój Koszyk Zakupowy
+                {% elif widok == 'logowanie' %}
+                    Konto Klienta – Logowanie
+                {% elif widok == 'regulamin' %}
+                    Regulamin Sklepu Internetowego
+                {% elif widok == 'kontakt' %}
+                    Kontakt i Biuro Obsługi
+                {% elif widok == 'reklamacje' %}
+                    Reklamacje, Zwroty i Gwarancja
+                {% elif widok == 'admin' %}
+                    Panel Administratora Systemu
+                {% endif %}
+            </h1>
+            <p>Sprawdzony sprzęt na szczupaka, sandacza, karpia i białą rybę z ekspresową wysyłką w 24 godziny.</p>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-box">
+                <strong>100+</strong>
+                <span>Produktów w bazie</span>
+            </div>
+            <div class="stat-box">
+                <strong>14 dni</strong>
+                <span>Na darmowy zwrot</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- GŁÓWNA ZAWARTOŚĆ STRONY -->
+    <main class="main-container">
+
+        <!-- WIDOK 1: KATALOG PRODUKTÓW -->
+        {% if widok == 'produkty' %}
+            <div class="filtry-bar">
+                <div class="filtry-inputs">
+                    <div class="input-wrapper">
+                        <input type="text" id="filtrNazwa" placeholder="🔍 Szukaj sprzętu po nazwie (np. Spinning, Karpiowa)..." oninput="pobierzProdukty()">
+                    </div>
+                    <div class="input-wrapper" style="max-width: 200px;">
+                        <input type="number" id="filtrCena" placeholder="💰 Maks. cena (zł)" step="1" oninput="pobierzProdukty()">
+                    </div>
+                    <button class="btn btn-primary" onclick="pobierzProdukty()">Filtruj</button>
+                    <button class="btn btn-secondary" onclick="resetujFiltry()">Wyczyść</button>
+                </div>
+                <div class="liczba-wynikow" id="licznikWynikow">Ładowanie...</div>
+            </div>
+
+            <div id="listaProduktow"></div>
+
+        <!-- WIDOK 2: KOSZYK ZAKUPOWY -->
+        {% elif widok == 'koszyk' %}
+            <div class="koszyk-grid">
+                <div class="panel-card">
+                    <h2>Wybrane produkty</h2>
+                    <p class="panel-subtitle">Przejrzyj zawartość swojego koszyka przed złożeniem zamówienia.</p>
+                    <div id="zawartoscKoszyka"></div>
+                </div>
+
+                <div class="panel-card">
+                    <h2>Podsumowanie i dostawa</h2>
+                    <p class="panel-subtitle">Zamówienie zostanie przekazane do realizacji i zapisane w bazie.</p>
+
+                    <div class="podsumowanie-wiersz">
+                        <span>Dostawa kurierem InPost / DPD</span>
+                        <strong>0.00 zł (Gratis)</strong>
+                    </div>
+                    <div class="podsumowanie-suma">
+                        <span>Do zapłaty:</span>
+                        <span id="sumaKoszyka">0.00 zł</span>
+                    </div>
+
+                    <div class="formularz-grupa" style="margin-top: 10px;">
+                        <input type="text" class="std-input" id="klientInput" placeholder="Imię i nazwisko odbiorcy">
+                        <input type="text" class="std-input" id="adresInput" placeholder="Ulica, numer domu, kod pocztowy i miasto">
+                        <button class="btn btn-success" onclick="zlozZamowienie()" style="width: 100%; padding: 14px;">
+                            ✓ Potwierdź i złóż zamówienie
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        <!-- WIDOK 3: LOGOWANIE KLIENTA -->
+        {% elif widok == 'logowanie' %}
+            <div class="koszyk-grid" style="max-width: 620px; margin: 0 auto; grid-template-columns: 1fr;">
+                <div class="panel-card">
+                    <h2>Zaloguj się lub utwórz konto klienta</h2>
+                    <p class="panel-subtitle">Podaj swoje dane, aby zapisać konto klienta w systemie sklepu „Złoty Haczyk”.</p>
+                    <div class="formularz-grupa">
+                        <input type="text" class="std-input" id="loginInput" placeholder="Twój login lub imię i nazwisko">
+                        <input type="email" class="std-input" id="emailInput" placeholder="Adres e-mail">
+                        <input type="password" class="std-input" id="hasloInput" placeholder="Hasło do konta">
+                        <button class="btn btn-primary" onclick="zalogujUzytkownika()">Zaloguj się</button>
+                    </div>
+                </div>
+            </div>
+
+        <!-- WIDOK 4: REGULAMIN (PODSTRONA ZE STOPKI) -->
+        {% elif widok == 'regulamin' %}
+            <div class="panel-card">
+                <h2>Regulamin Sklepu Internetowego „Złoty Haczyk”</h2>
+                <p class="panel-subtitle">Obowiązuje od dnia 1 stycznia 2026 r.</p>
+
+                <h3>§1. Postanowienia ogólne</h3>
+                <p>1. Sklep internetowy „Złoty Haczyk” prowadzi sprzedaż detaliczną sprzętu i akcesoriów wędkarskich za pośrednictwem sieci Internet.</p>
+                <p>2. Wszystkie ceny podane w katalogu produktów są cenami brutto (zawierają podatek VAT) i wyrażone są w złotych polskich (PLN).</p>
+
+                <h3>§2. Składanie i realizacja zamówień</h3>
+                <p>1. Zamówienia można składać przez 24 godziny na dobę za pomocą funkcji Koszyka Zakupowego dostępnej na stronie.</p>
+                <p>2. Warunkiem realizacji zamówienia jest poprawne wypełnienie formularza adresowego w koszyku.</p>
+                <p>3. Czas przygotowania paczki do wysyłki wynosi maksymalnie 24 godziny w dni robocze.</p>
+
+                <h3>§3. Ochrona danych osobowych</h3>
+                <p>1. Dane klientów logujących się na stronie oraz składających zamówienia są przechowywane w bazie danych sklepu wyłącznie w celu realizacji zamówień oraz obsługi konta użytkownika.</p>
+            </div>
+
+        <!-- WIDOK 5: KONTAKT (PODSTRONA ZE STOPKI) -->
+        {% elif widok == 'kontakt' %}
+            <div class="koszyk-grid">
+                <div class="panel-card">
+                    <h2>Dane kontaktowe sklepu</h2>
+                    <p class="panel-subtitle">Nasz zespół doradców wędkarskich chętnie pomoże w doborze wędziska i kołowrotka.</p>
+
+                    <h3>📍 Adres magazynu i sklepu stacjonarnego</h3>
+                    <p>Sklep Wędkarski „Złoty Haczyk”<br>ul. Nadwodna 15, 00-120 Warszawa</p>
+
+                    <h3>📞 Infolinia oraz e-mail</h3>
+                    <p>Telefon: <strong>+48 500 600 700</strong> (Pon.–Pt. 8:00 – 18:00)<br>E-mail: <strong>kontakt@zlotyhaczyk.pl</strong></p>
+
+                    <h3>🕒 Godziny otwarcia</h3>
+                    <p>Poniedziałek – Piątek: 08:00 – 18:00<br>Sobota: 09:00 – 14:00</p>
+                </div>
+
+                <div class="panel-card">
+                    <h2>Napisz do nas wiadomość</h2>
+                    <p class="panel-subtitle">Odpowiadamy na wiadomości w ciągu 2 godzin roboczych.</p>
+                    <div class="formularz-grupa">
+                        <input type="text" class="std-input" id="kontaktImie" placeholder="Twoje imię">
+                        <input type="email" class="std-input" id="kontaktEmail" placeholder="Twój adres e-mail">
+                        <input type="text" class="std-input" id="kontaktTresc" placeholder="Treść pytania (np. dobór wędki)...">
+                        <button class="btn btn-primary" onclick="wyslijKontakt()">Wyślij wiadomość</button>
+                    </div>
+                </div>
+            </div>
+
+        <!-- WIDOK 6: REKLAMACJE I ZWROTY (PODSTRONA ZE STOPKI) -->
+        {% elif widok == 'reklamacje' %}
+            <div class="panel-card">
+                <h2>Reklamacje, Zwroty i Gwarancja</h2>
+                <p class="panel-subtitle">Bezpieczne zakupy z 2-letnią gwarancją producenta na wszystkie wędki i kołowrotki.</p>
+
+                <h3>1. Darmowy zwrot w ciągu 14 dni</h3>
+                <p>Każdy klient ma prawo odstąpić od umowy zakupu bez podania przyczyny w terminie 14 dni od otrzymania przesyłki. Towar nie może nosić śladów użytkowania nad wodą.</p>
+
+                <h3>2. Procedura reklamacyjna (Gwarancja 24 miesiące)</h3>
+                <p>W przypadku wykrycia wady fabrycznej wędziska, kołowrotka lub sygnalizatora brań:</p>
+                <p>• Spakuj bezpiecznie reklamowany produkt wraz z numerem zamówienia.<br>
+                   • Wyślij zgłoszenie na adres <strong>reklamacje@zlotyhaczyk.pl</strong>.<br>
+                   • Reklamacje rozpatrujemy w terminie maksymalnie 14 dni kalendarzowych.</p>
+
+                <h3>3. Uszkodzenia w transporcie</h3>
+                <p>Wszystkie wędki wysyłamy w grubych, usztywnianych tubach kartonowych. W razie zauważenia uszkodzenia tuby przy odbiorze prosimy o spisanie protokołu szkody z kurierem.</p>
+            </div>
+
+        <!-- WIDOK 7: PANEL ADMINISTRATORA (PODSTRONA ZE STOPKI) -->
+        {% elif widok == 'admin' %}
+
+            <!-- EKRAN LOGOWANIA ADMINA (GDY NIEZALOGOWANY) -->
+            <div id="adminLoginSekcja" style="display: {{ 'none' if admin_zalogowany else 'block' }};">
+                <div class="admin-login-box">
+                    <div class="admin-lock-icon">🔒</div>
+                    <h2>Autoryzacja Administratora</h2>
+                    <p class="panel-subtitle">Wprowadź dane dostępowe administratora, aby wyświetlić bazę klientów oraz zamówienia.</p>
+                    <div class="formularz-grupa">
+                        <input type="text" class="std-input" id="adminLoginInput" placeholder="Login administratora">
+                        <input type="password" class="std-input" id="adminHasloInput" placeholder="Hasło administratora" onkeydown="if(event.key==='Enter') zalogujAdmina()">
+                        <button class="btn btn-primary" onclick="zalogujAdmina()" style="width: 100%; padding: 13px;">
+                            Odblokuj Panel Administratora
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WŁAŚCIWY PANEL ADMINA (PO PODANIU tymek / alan) -->
+            <div id="adminDashboardSekcja" style="display: {{ 'block' if admin_zalogowany else 'none' }};">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+                    <div>
+                        <h2 style="font-size: 1.5rem; font-weight: 800;">Zalogowano jako: <span style="color: var(--primary);">tymek (Administrator)</span></h2>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Pełny podgląd bazy klientów, historii logowań, zamówień oraz magazynu.</p>
+                    </div>
+                    <button class="btn btn-danger" onclick="wylogujAdmina()" style="padding: 10px 18px; font-size: 0.88rem;">
+                        Wyloguj z panelu
+                    </button>
+                </div>
+
+                <!-- KARTY STATYSTYK -->
+                <div class="admin-stats-grid">
+                    <div class="admin-stat-card">
+                        <span>Zarejestrowani klienci</span>
+                        <strong id="statKlienci">0</strong>
+                    </div>
+                    <div class="admin-stat-card">
+                        <span>Złożone zamówienia</span>
+                        <strong id="statZamowienia">0</strong>
+                    </div>
+                    <div class="admin-stat-card">
+                        <span>Łączna wartość zamówień</span>
+                        <strong id="statPrzychod" style="color: var(--accent);">0.00 zł</strong>
+                    </div>
+                </div>
+
+                <!-- SEKCJA 1: BAZA KLIENTÓW I HISTORIA LOGOWAŃ -->
+                <div class="koszyk-grid" style="margin-bottom: 24px; grid-template-columns: 1fr 1fr;">
+                    <div class="panel-card">
+                        <h2>👥 Baza Kont Klientów</h2>
+                        <p class="panel-subtitle">Lista zarejestrowanych użytkowników w tabeli <code>uzytkownicy</code>.</p>
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr><th>ID</th><th>Login klienta</th><th>Adres e-mail</th><th>Data rejestracji</th></tr>
+                                </thead>
+                                <tbody id="tabelaKlientowAdmin"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="panel-card">
+                        <h2>🕒 Historia Logowań na Stronie</h2>
+                        <p class="panel-subtitle">Rejestr wszystkich logowań zapisany w tabeli <code>logowania</code>.</p>
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr><th>ID</th><th>Login</th><th>E-mail</th><th>Data logowania</th></tr>
+                                </thead>
+                                <tbody id="tabelaLogowanAdmin"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEKCJA 2: ZŁOŻONE ZAMÓWIENIA -->
+                <div class="panel-card" style="margin-bottom: 24px;">
+                    <h2>📦 Złożone Zamówienia Klientów</h2>
+                    <p class="panel-subtitle">Wszystkie zamówienia przesłane przez koszyk zakupowy.</p>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr><th>ID</th><th>Klient</th><th>Adres dostawy</th><th>Zamówione towary</th><th>Kwota</th><th>Data</th></tr>
+                            </thead>
+                            <tbody id="tabelaZamowien"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- SEKCJA 3: DODAWANIE I EDYCJA PRODUKTÓW -->
+                <div class="panel-card" style="margin-bottom: 24px;">
+                    <h2>➕ Dodaj nowy produkt do sklepu</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 14px;">
+                        <input type="text" class="std-input" id="nowaNazwa" placeholder="Nazwa produktu">
+                        <input type="text" class="std-input" id="nowyOpis" placeholder="Krótki opis techniczny">
+                        <input type="number" class="std-input" id="nowaCena" placeholder="Cena (zł)" step="0.01">
+                        <select id="nowaKategoria">
+                            <option value="Wędki">Wędki</option>
+                            <option value="Kołowrotki">Kołowrotki</option>
+                            <option value="Przynęty">Przynęty</option>
+                            <option value="Żyłki">Żyłki</option>
+                            <option value="Akcesoria">Akcesoria</option>
+                        </select>
+                        <button class="btn btn-success" onclick="dodajProduktAdmin()">+ Dodaj produkt</button>
+                    </div>
+                </div>
+
+                <div class="panel-card">
+                    <h2>⚙️ Zarządzanie magazynem i cenami</h2>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr><th>ID</th><th>Nazwa produktu</th><th>Kategoria</th><th>Cena (zł)</th><th>Akcje</th></tr>
+                            </thead>
+                            <tbody id="tabelaProduktowAdmin"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+    </main>
+
+    <!-- ROZBUDOWANA STOPKA Z REGULAMINEM, KONTAKTEM, REKLAMACJAMI I PANELEM ADMINA -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>🎣 Sklep Wędkarski „Złoty Haczyk”</h4>
+                <p>Twój sprawdzony partner nad wodą. Oferujemy wyselekcjonowany sprzęt spinningowy, karpiowy, spławikowy oraz feederowy dla początkujących i profesjonalistów.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Informacje i Pomoc</h4>
+                <ul class="footer-links">
+                    <li><a href="/regulamin">📄 Regulamin sklepu</a></li>
+                    <li><a href="/reklamacje">🛡️ Reklamacje i zwroty (14 dni)</a></li>
+                    <li><a href="/kontakt">📞 Kontakt i biuro obsługi</a></li>
+                    <li><a href="/koszyk">🛒 Twój koszyk zakupowy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Kategorie Sprzętu</h4>
+                <ul class="footer-links">
+                    <li><a href="/wedki">Wędki węglowe i kompozytowe</a></li>
+                    <li><a href="/kolowrotki">Kołowrotki z wolnym biegiem</a></li>
+                    <li><a href="/przynety">Woblery, gumy i kulki proteinowe</a></li>
+                    <li><a href="/zylki">Żyłki i plecionki wędkarskie</a></li>
+                    <li><a href="/akcesoria">Akcesoria biwakowe i podbieraki</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Strefa Administracji</h4>
+                <p style="margin-bottom: 10px;">Dostęp przeznaczony wyłącznie dla uprawnionych pracowników obsługi sklepu.</p>
+                <ul class="footer-links">
+                    <li><a href="/admin" class="footer-admin-link">🔒 Panel Administratora</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Sklep Wędkarski „Złoty Haczyk”. Wszystkie prawa zastrzeżone.</span>
+            <span>Projekt aplikacji webowej: JavaScript + Flask + SQLite</span>
+        </div>
+    </footer>
+
+    <script>
+        const aktualnaKategoria = "{{ wybrana_kategoria }}";
+        const aktualnyWidok = "{{ widok }}";
+        const czyAdminZalogowany = {{ 'true' if admin_zalogowany else 'false' }};
+
+        // ==================== POWIADOMIENIA TOAST ====================
+        function pokazPowiadomienie(tytul, opis, typ = 'sukces') {
+            const kontener = document.getElementById('toastKontener');
+            const toast = document.createElement('div');
+            toast.className = `toast ${typ === 'sukces' ? 'toast-sukces' : 'toast-blad'}`;
+
+            const ikona = typ === 'sukces' ? '✓' : '!';
+            toast.innerHTML = `
+                <div class="toast-ikona">${ikona}</div>
+                <div class="toast-tresc">
+                    <div class="toast-tytul">${tytul}</div>
+                    <div class="toast-opis">${opis}</div>
+                </div>
+                <div class="toast-pasek"></div>
+            `;
+
+            kontener.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.add('ukryj');
+                setTimeout(() => toast.remove(), 300);
+            }, 3200);
+        }
+
+        function stylKategorii(kategoria) {
+            const mapa = {
+                'Wędki': { klasa: 'wizual-wedki', ikona: '🎣' },
+                'Kołowrotki': { klasa: 'wizual-kolowrotki', ikona: '⚙️' },
+                'Przynęty': { klasa: 'wizual-przynety', ikona: '🐟' },
+                'Żyłki': { klasa: 'wizual-zylki', ikona: '🧵' },
+                'Akcesoria': { klasa: 'wizual-akcesoria', ikona: '🧰' }
+            };
+            return mapa[kategoria] || { klasa: 'wizual-akcesoria', ikona: '🎣' };
+        }
+
+        // ==================== KOSZYK ZAKUPOWY ====================
+        function pobierzKoszyk() {
+            return JSON.parse(localStorage.getItem('koszyk_wedkarski') || '[]');
+        }
+
+        function zapiszKoszyk(koszyk) {
+            localStorage.setItem('koszyk_wedkarski', JSON.stringify(koszyk));
+            aktualizujLicznikKoszyka();
+        }
+
+        function aktualizujLicznikKoszyka() {
+            const koszyk = pobierzKoszyk();
+            const badge = document.getElementById('licznikKoszyka');
+            badge.textContent = koszyk.length;
+            badge.style.transform = 'scale(1.25)';
+            setTimeout(() => badge.style.transform = 'scale(1)', 200);
+        }
+
+        function dodajDoKoszyka(id, nazwa, cena) {
+            const koszyk = pobierzKoszyk();
+            koszyk.push({ id, nazwa, cena: Number(cena) });
+            zapiszKoszyk(koszyk);
+            pokazPowiadomienie('Dodano do koszyka', `${nazwa} (${Number(cena).toFixed(2)} zł)`, 'sukces');
+        }
+
+        function usunZKoszyka(indeks) {
+            const koszyk = pobierzKoszyk();
+            const usuniety = koszyk[indeks];
+            koszyk.splice(indeks, 1);
+            zapiszKoszyk(koszyk);
+            wyswietlKoszyk();
+            if (usuniety) {
+                pokazPowiadomienie('Usunięto z koszyka', usuniety.nazwa, 'blad');
+            }
+        }
+
+        function wyswietlKoszyk() {
+            const koszyk = pobierzKoszyk();
+            const kontener = document.getElementById('zawartoscKoszyka');
+            const sumaEl = document.getElementById('sumaKoszyka');
+
+            if (koszyk.length === 0) {
+                kontener.innerHTML = '<p style="padding: 24px 0; color: var(--text-secondary);">Twój koszyk jest obecnie pusty. Przejdź do katalogu i wybierz sprzęt.</p>';
+                sumaEl.textContent = '0.00 zł';
+                return;
+            }
+
+            let suma = 0;
+            kontener.innerHTML = `
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Produkt</th><th>Cena</th><th></th></tr></thead>
+                        <tbody>
+                            ${koszyk.map((p, idx) => {
+                                suma += p.cena;
+                                return `<tr>
+                                    <td><strong>${p.nazwa}</strong></td>
+                                    <td>${p.cena.toFixed(2)} zł</td>
+                                    <td style="text-align:right;">
+                                        <button class="btn btn-danger" onclick="usunZKoszyka(${idx})">Usuń</button>
+                                    </td>
+                                </tr>`;
+                            }).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+            sumaEl.textContent = `${suma.toFixed(2)} zł`;
+        }
+
+        async function zlozZamowienie() {
+            const koszyk = pobierzKoszyk();
+            const klient = document.getElementById('klientInput').value;
+            const adres = document.getElementById('adresInput').value;
+
+            if (koszyk.length === 0) {
+                pokazPowiadomienie('Pusty koszyk', 'Dodaj przynajmniej jeden produkt przed zamówieniem.', 'blad');
+                return;
+            }
+
+            const suma = koszyk.reduce((acc, p) => acc + p.cena, 0);
+            const produkty_lista = koszyk.map(p => p.nazwa).join(', ');
+
+            const odp = await fetch('/api/zamowienia', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ klient, adres, produkty_lista, suma })
+            });
+
+            const wynik = await odp.json();
+            if (wynik.sukces) {
+                pokazPowiadomienie('Zamówienie złożone!', wynik.komunikat, 'sukces');
+                zapiszKoszyk([]);
+                wyswietlKoszyk();
+                document.getElementById('klientInput').value = '';
+                document.getElementById('adresInput').value = '';
+            } else {
+                pokazPowiadomienie('Błąd formularza', wynik.komunikat, 'blad');
+            }
+        }
+
+        // ==================== KATALOG PRODUKTÓW ====================
+        async function pobierzProdukty() {
+            const nazwa = document.getElementById('filtrNazwa').value;
+            const cenaMax = document.getElementById('filtrCena').value;
+
+            const params = new URLSearchParams({ kategoria: aktualnaKategoria });
+            if (nazwa) params.append('nazwa', nazwa);
+            if (cenaMax) params.append('cena_max', cenaMax);
+
+            const odp = await fetch(`/api/produkty?${params.toString()}`);
+            const produkty = await odp.json();
+            const kontener = document.getElementById('listaProduktow');
+            const licznik = document.getElementById('licznikWynikow');
+
+            licznik.textContent = `Znaleziono: ${produkty.length} szt.`;
+
+            if (produkty.length === 0) {
+                kontener.innerHTML = `
+                    <div class="panel-card" style="grid-column: 1/-1; text-align:center; padding: 48px;">
+                        <h3>Brak produktów spełniających kryteria</h3>
+                        <p class="panel-subtitle" style="margin-top:8px;">Spróbuj zmienić wpisaną nazwę lub zwiększyć maksymalną cenę.</p>
+                    </div>`;
+                return;
+            }
+
+            kontener.innerHTML = produkty.map(p => {
+                const wizual = stylKategorii(p.kategoria);
+                return `
+                <article class="karta">
+                    <div>
+                        <div class="karta-wizual ${wizual.klasa}">
+                            <span class="kategoria-pill">${p.kategoria}</span>
+                            ${p.dostepnosc
+                                ? '<span class="status-pill status-ok"><span class="status-dot"></span>W magazynie</span>'
+                                : '<span class="status-pill status-brak"><span class="status-dot"></span>Wyprzedane</span>'}
+                            <div class="karta-ikona">${wizual.ikona}</div>
+                        </div>
+                        <div class="karta-body">
+                            <h3>${p.nazwa}</h3>
+                            <p>${p.opis}</p>
+                        </div>
+                    </div>
+                    <div class="karta-footer">
+                        <div class="cena-blok">
+                            <small>Cena brutto</small>
+                            <span class="cena">${Number(p.cena).toFixed(2)} zł</span>
+                        </div>
+                        ${p.dostepnosc
+                            ? `<button class="btn-add-cart" onclick='dodajDoKoszyka(${p.id}, ${JSON.stringify(p.nazwa)}, ${p.cena})'>
+                                🛒 Do koszyka
+                               </button>`
+                            : `<span style="color: var(--text-muted); font-size: 0.82rem; font-weight: 700;">Niedostępny</span>`}
+                    </div>
+                </article>`;
+            }).join('');
+        }
+
+        function resetujFiltry() {
+            document.getElementById('filtrNazwa').value = '';
+            document.getElementById('filtrCena').value = '';
+            pobierzProdukty();
+            pokazPowiadomienie('Wyczyszczono filtry', 'Wyświetlam wszystkie produkty w kategorii.', 'sukces');
+        }
+
+        // ==================== LOGOWANIE KLIENTA ====================
+        async function zalogujUzytkownika() {
+            const login = document.getElementById('loginInput').value;
+            const email = document.getElementById('emailInput').value;
+            const haslo = document.getElementById('hasloInput').value;
+
+            const odp = await fetch('/api/zaloguj', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ login, email, haslo })
+            });
+
+            const wynik = await odp.json();
+            if (wynik.sukces) {
+                pokazPowiadomienie('Zalogowano pomyślnie', wynik.komunikat, 'sukces');
+                document.getElementById('loginInput').value = '';
+                document.getElementById('emailInput').value = '';
+                document.getElementById('hasloInput').value = '';
+            } else {
+                pokazPowiadomienie('Błąd logowania', wynik.komunikat, 'blad');
+            }
+        }
+
+        function wyslijKontakt() {
+            const imie = document.getElementById('kontaktImie').value;
+            if (!imie) {
+                pokazPowiadomienie('Uzupełnij formularz', 'Podaj swoje imię oraz treść wiadomości.', 'blad');
+                return;
+            }
+            document.getElementById('kontaktImie').value = '';
+            document.getElementById('kontaktEmail').value = '';
+            document.getElementById('kontaktTresc').value = '';
+            pokazPowiadomienie('Wiadomość wysłana!', 'Dziękujemy za kontakt. Odpowiemy najszybciej jak to możliwe.', 'sukces');
+        }
+
+        // ==================== LOGOWANIE I OBSŁUGA ADMINA (tymek / alan) ====================
+        async function zalogujAdmina() {
+            const login = document.getElementById('adminLoginInput').value;
+            const haslo = document.getElementById('adminHasloInput').value;
+
+            const odp = await fetch('/api/admin/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ login, haslo })
+            });
+
+            const wynik = await odp.json();
+            if (wynik.sukces) {
+                pokazPowiadomienie('Autoryzacja udana', wynik.komunikat, 'sukces');
+                document.getElementById('adminLoginSekcja').style.display = 'none';
+                document.getElementById('adminDashboardSekcja').style.display = 'block';
+                zaladujPanelAdmina();
+            } else {
+                pokazPowiadomienie('Odmowa dostępu', wynik.komunikat, 'blad');
+            }
+        }
+
+        async function wylogujAdmina() {
+            await fetch('/api/admin/logout', { method: 'POST' });
+            pokazPowiadomienie('Wylogowano', 'Sesja administratora została zakończona.', 'sukces');
+            document.getElementById('adminDashboardSekcja').style.display = 'none';
+            document.getElementById('adminLoginSekcja').style.display = 'block';
+            document.getElementById('adminLoginInput').value = '';
+            document.getElementById('adminHasloInput').value = '';
+        }
+
+        async function zaladujPanelAdmina() {
+            // 1. Pobierz bazę klientów i historię logowań
+            const odpKlienci = await fetch('/api/admin/klienci');
+            if (odpKlienci.ok) {
+                const daneKlienci = await odpKlienci.json();
+                document.getElementById('statKlienci').textContent = daneKlienci.uzytkownicy.length;
+
+                document.getElementById('tabelaKlientowAdmin').innerHTML = daneKlienci.uzytkownicy.length
+                    ? daneKlienci.uzytkownicy.map(u => `
+                        <tr>
+                            <td>#${u.id}</td>
+                            <td><strong>${u.login}</strong></td>
+                            <td>${u.email}</td>
+                            <td>${u.data_utworzenia}</td>
+                        </tr>`).join('')
+                    : '<tr><td colspan="4">Brak zarejestrowanych klientów.</td></tr>';
+
+                document.getElementById('tabelaLogowanAdmin').innerHTML = daneKlienci.logowania.length
+                    ? daneKlienci.logowania.map(l => `
+                        <tr>
+                            <td>#${l.id}</td>
+                            <td><strong>${l.login}</strong></td>
+                            <td>${l.email}</td>
+                            <td>${l.data_logowania}</td>
+                        </tr>`).join('')
+                    : '<tr><td colspan="4">Brak historii logowań.</td></tr>';
+            }
+
+            // 2. Pobierz zamówienia
+            const odpZam = await fetch('/api/zamowienia');
+            const zamowienia = await odpZam.json();
+            document.getElementById('statZamowienia').textContent = zamowienia.length;
+
+            const lacznyPrzychod = zamowienia.reduce((acc, z) => acc + Number(z.suma), 0);
+            document.getElementById('statPrzychod').textContent = `${lacznyPrzychod.toFixed(2)} zł`;
+
+            document.getElementById('tabelaZamowien').innerHTML = zamowienia.length
+                ? zamowienia.map(z => `
+                    <tr>
+                        <td>#${z.id}</td>
+                        <td><strong>${z.klient}</strong></td>
+                        <td>${z.adres}</td>
+                        <td>${z.produkty_lista}</td>
+                        <td><strong style="color: var(--accent);">${Number(z.suma).toFixed(2)} zł</strong></td>
+                        <td>${z.data_zamowienia}</td>
+                    </tr>`).join('')
+                : '<tr><td colspan="6">Brak złożonych zamówień.</td></tr>';
+
+            // 3. Pobierz produkty do edycji
+            const odpProd = await fetch('/api/produkty');
+            const produkty = await odpProd.json();
+            document.getElementById('tabelaProduktowAdmin').innerHTML = produkty.map(p => `
+                <tr>
+                    <td>#${p.id}</td>
+                    <td><strong>${p.nazwa}</strong></td>
+                    <td>${p.kategoria}</td>
+                    <td>
+                        <input type="number" class="std-input" id="cena_${p.id}" value="${p.cena}" step="0.01" style="width:110px; padding: 7px 10px;">
+                    </td>
+                    <td style="display:flex; gap:8px;">
+                        <button class="btn btn-primary" style="padding: 8px 14px; font-size:0.82rem;" onclick="zapiszCeneAdmin(${p.id})">Zapisz</button>
+                        <button class="btn btn-danger" onclick="usunProduktAdmin(${p.id})">Usuń</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        async function dodajProduktAdmin() {
+            const nazwa = document.getElementById('nowaNazwa').value;
+            const opis = document.getElementById('nowyOpis').value;
+            const cena = document.getElementById('nowaCena').value;
+            const kategoria = document.getElementById('nowaKategoria').value;
+
+            const odp = await fetch('/api/produkty', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nazwa, opis, cena, kategoria })
+            });
+            const wynik = await odp.json();
+
+            if (wynik.sukces) {
+                pokazPowiadomienie('Dodano produkt', wynik.komunikat, 'sukces');
+                document.getElementById('nowaNazwa').value = '';
+                document.getElementById('nowyOpis').value = '';
+                document.getElementById('nowaCena').value = '';
+                zaladujPanelAdmina();
+            } else {
+                pokazPowiadomienie('Błąd walidacji', wynik.komunikat, 'blad');
+            }
+        }
+
+        async function zapiszCeneAdmin(id) {
+            const cena = document.getElementById(`cena_${id}`).value;
+            await fetch(`/api/produkty/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ cena, dostepnosc: 1 })
+            });
+            pokazPowiadomienie('Zapisano zmiany', `Zaktualizowano cenę produktu #${id} na ${Number(cena).toFixed(2)} zł.`, 'sukces');
+            zaladujPanelAdmina();
+        }
+
+        async function usunProduktAdmin(id) {
+            await fetch(`/api/produkty/${id}`, { method: 'DELETE' });
+            pokazPowiadomienie('Usunięto produkt', `Produkt #${id} został usunięty z bazy danych.`, 'blad');
+            zaladujPanelAdmina();
+        }
+
+        window.onload = () => {
+            aktualizujLicznikKoszyka();
+            if (aktualnyWidok === 'produkty') pobierzProdukty();
+            if (aktualnyWidok === 'koszyk') wyswietlKoszyk();
+            if (aktualnyWidok === 'admin' && czyAdminZalogowany) zaladujPanelAdmina();
+        };
+    </script>
+</body>
+</html>
