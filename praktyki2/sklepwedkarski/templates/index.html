@@ -1,4 +1,3 @@
-<!-- Kod wygenerowany przez AI -->
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -134,6 +133,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         .nav-btn {
@@ -161,6 +161,32 @@
             background: var(--primary);
             color: white;
             border-color: var(--primary);
+        }
+
+        .nav-btn-fav:hover {
+            border-color: var(--danger);
+            color: var(--danger);
+        }
+
+        .nav-btn-fav.aktywna {
+            background: var(--danger);
+            border-color: var(--danger);
+            color: white;
+        }
+
+        .fav-badge {
+            background: var(--danger-light);
+            color: var(--danger);
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            transition: transform 0.25s ease;
+        }
+
+        .nav-btn-fav.aktywna .fav-badge {
+            background: #ffffff;
+            color: var(--danger);
         }
 
         .nav-btn-cart {
@@ -239,7 +265,7 @@
             flex: 1;
         }
 
-        /* ==================== FILTRY ==================== */
+        /* ==================== FILTRY I ROZWIJANY PASEK SORTOWANIA ==================== */
         .filtry-bar {
             background: var(--bg-surface);
             padding: 18px 22px;
@@ -251,7 +277,7 @@
             justify-content: space-between;
             gap: 16px;
             flex-wrap: wrap;
-            margin-bottom: 26px;
+            margin-bottom: 14px;
         }
 
         .filtry-inputs {
@@ -283,6 +309,68 @@
             box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12);
         }
 
+        .sort-drawer {
+            background: #ffffff;
+            border: 1.5px solid #bae6fd;
+            border-radius: var(--radius-md);
+            padding: 16px 22px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-md);
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            animation: slideDownBar 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDownBar {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .sort-label {
+            font-weight: 800;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sort-options {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .sort-chip {
+            padding: 9px 16px;
+            border-radius: 999px;
+            border: 1.5px solid var(--border);
+            background: #f8fafc;
+            color: var(--text-secondary);
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .sort-chip:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .sort-chip.aktywny {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.28);
+        }
+
         .btn {
             display: inline-flex;
             align-items: center;
@@ -296,6 +384,7 @@
             border: none;
             cursor: pointer;
             transition: all 0.2s ease;
+            text-decoration: none;
         }
 
         .btn-primary { background: var(--primary); color: white; }
@@ -316,10 +405,11 @@
         }
 
         /* ==================== SIATKA PRODUKTÓW ==================== */
-        #listaProduktow {
+        #listaProduktow, #listaUlubionych {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
             gap: 22px;
+            margin-top: 12px;
         }
 
         .karta {
@@ -398,32 +488,65 @@
         .karta-body p { color: var(--text-secondary); font-size: 0.88rem; }
 
         .karta-footer {
-            padding: 16px 20px;
+            padding: 14px 18px;
             border-top: 1px solid #f1f5f9;
             background: #fafaf9;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 8px;
         }
 
         .cena-blok small { display: block; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
-        .cena { font-size: 1.3rem; font-weight: 800; color: var(--text-main); }
+        .cena { font-size: 1.25rem; font-weight: 800; color: var(--text-main); }
 
-        .btn-add-cart {
-            padding: 10px 16px;
+        .karta-akcje {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-fav {
+            width: 38px;
+            height: 38px;
             border-radius: 10px;
-            background: var(--bg-dark);
-            color: white;
-            font-weight: 700;
-            font-size: 0.85rem;
-            border: none;
+            border: 1.5px solid var(--border);
+            background: #ffffff;
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
             transition: all 0.2s ease;
         }
 
+        .btn-fav:hover {
+            border-color: var(--danger);
+            background: var(--danger-light);
+            transform: scale(1.06);
+        }
+
+        .btn-fav.polubiony {
+            border-color: #fecaca;
+            background: var(--danger-light);
+        }
+
+        .btn-add-cart {
+            padding: 10px 14px;
+            border-radius: 10px;
+            background: var(--bg-dark);
+            color: white;
+            font-weight: 700;
+            font-size: 0.84rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
         .btn-add-cart:hover { background: var(--primary); transform: scale(1.03); }
 
-        /* ==================== PANELE, KOSZYK I PODSTRONY INFO ==================== */
+        /* ==================== PANELE, PROFIL, KOSZYK ==================== */
         .koszyk-grid {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
@@ -448,6 +571,33 @@
         .panel-card h3 { font-size: 1.1rem; font-weight: 700; margin: 20px 0 8px; color: var(--primary); }
         .panel-subtitle { color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 20px; }
         .formularz-grupa { display: flex; flex-direction: column; gap: 14px; }
+
+        .profil-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        .profil-info { display: flex; align-items: center; gap: 16px; }
+
+        .profil-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0284c7, #10b981);
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+        }
 
         .podsumowanie-wiersz {
             display: flex;
@@ -592,7 +742,7 @@
         @keyframes toastSlideOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(15px); } }
         @keyframes toastProgress { from { width: 100%; } to { width: 0%; } }
 
-        /* ==================== ROZBUDOWANA STOPKA ==================== */
+        /* ==================== STOPKA ==================== */
         .site-footer {
             background: var(--bg-dark);
             color: #94a3b8;
@@ -615,26 +765,10 @@
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
 
-        .footer-col h4 {
-            color: #ffffff;
-            font-size: 0.95rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-            letter-spacing: 0.02em;
-        }
+        .footer-col h4 { color: #ffffff; font-size: 0.95rem; font-weight: 800; margin-bottom: 16px; }
+        .footer-col p { font-size: 0.88rem; line-height: 1.6; color: #94a3b8; }
 
-        .footer-col p {
-            font-size: 0.88rem;
-            line-height: 1.6;
-            color: #94a3b8;
-        }
-
-        .footer-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+        .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 
         .footer-links a {
             color: #94a3b8;
@@ -646,10 +780,7 @@
             gap: 6px;
         }
 
-        .footer-links a:hover {
-            color: #38bdf8;
-            transform: translateX(3px);
-        }
+        .footer-links a:hover { color: #38bdf8; transform: translateX(3px); }
 
         .footer-admin-link {
             display: inline-flex;
@@ -687,7 +818,7 @@
 
     <div id="toastKontener"></div>
 
-    <!-- GÓRNY PASEK NAWIGACJI (BEZ PRZYCISKU ADMINA) -->
+    <!-- GÓRNY PASEK NAWIGACJI -->
     <header class="topbar">
         <div class="topbar-inner">
             <a href="/" class="brand">
@@ -708,7 +839,10 @@
             </nav>
 
             <div class="nav-actions">
-                <a href="/logowanie" class="nav-btn {{ 'aktywna' if widok == 'logowanie' else '' }}">👤 Konto klienta</a>
+                <a href="/ulubione" class="nav-btn nav-btn-fav {{ 'aktywna' if widok == 'ulubione' else '' }}">
+                    ❤️ Ulubione <span class="fav-badge" id="licznikUlubionych">0</span>
+                </a>
+                <a href="/profil" class="nav-btn {{ 'aktywna' if widok == 'profil' else '' }}">👤 Profil klienta</a>
                 <a href="/koszyk" class="nav-btn nav-btn-cart">
                     🛒 Koszyk <span class="cart-badge" id="licznikKoszyka">0</span>
                 </a>
@@ -723,10 +857,12 @@
             <h1>
                 {% if widok == 'produkty' %}
                     Kategoria: {{ wybrana_kategoria }}
+                {% elif widok == 'ulubione' %}
+                    Twoje Ulubione Produkty
                 {% elif widok == 'koszyk' %}
                     Twój Koszyk Zakupowy
-                {% elif widok == 'logowanie' %}
-                    Konto Klienta – Logowanie
+                {% elif widok == 'profil' %}
+                    Profil Klienta
                 {% elif widok == 'regulamin' %}
                     Regulamin Sklepu Internetowego
                 {% elif widok == 'kontakt' %}
@@ -764,13 +900,39 @@
                     <div class="input-wrapper" style="max-width: 200px;">
                         <input type="number" id="filtrCena" placeholder="💰 Maks. cena (zł)" step="1" oninput="pobierzProdukty()">
                     </div>
-                    <button class="btn btn-primary" onclick="pobierzProdukty()">Filtruj</button>
+                    <button class="btn btn-primary" onclick="przelaczPasekFiltrow()">🎛️ Filtruj</button>
                     <button class="btn btn-secondary" onclick="resetujFiltry()">Wyczyść</button>
                 </div>
                 <div class="liczba-wynikow" id="licznikWynikow">Ładowanie...</div>
             </div>
 
+            <div id="pasekSortowania" class="sort-drawer">
+                <span class="sort-label">Sortuj i filtruj listę:</span>
+                <div class="sort-options">
+                    <button type="button" class="sort-chip aktywny" data-sort="domyslne" onclick="ustawSortowanie('domyslne', this)">Domyślnie</button>
+                    <button type="button" class="sort-chip" data-sort="cena_asc" onclick="ustawSortowanie('cena_asc', this)">💰 Cena: rosnąco</button>
+                    <button type="button" class="sort-chip" data-sort="cena_desc" onclick="ustawSortowanie('cena_desc', this)">💰 Cena: malejąco</button>
+                    <button type="button" class="sort-chip" data-sort="nazwa_asc" onclick="ustawSortowanie('nazwa_asc', this)">🔤 Nazwa: A–Z</button>
+                    <button type="button" class="sort-chip" data-sort="nazwa_desc" onclick="ustawSortowanie('nazwa_desc', this)">🔤 Nazwa: Z–A</button>
+                </div>
+            </div>
+
             <div id="listaProduktow"></div>
+
+        <!-- WIDOK 1B: PODSTRONA ULUBIONE (ZAPISYWANE W COOKIES) -->
+        {% elif widok == 'ulubione' %}
+            <div class="filtry-bar">
+                <div>
+                    <strong>Zapisane w plikach cookies przeglądarki</strong>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Twoja lista ulubionego sprzętu jest przechowywana w pliku cookie (ważnym 30 dni).</p>
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <span class="liczba-wynikow" id="licznikWynikowUlubione">0 szt.</span>
+                    <button class="btn btn-danger" onclick="wyczyscWszystkieUlubione()">🗑️ Wyczyść ulubione</button>
+                </div>
+            </div>
+
+            <div id="listaUlubionych"></div>
 
         <!-- WIDOK 2: KOSZYK ZAKUPOWY -->
         {% elif widok == 'koszyk' %}
@@ -795,7 +957,7 @@
                     </div>
 
                     <div class="formularz-grupa" style="margin-top: 10px;">
-                        <input type="text" class="std-input" id="klientInput" placeholder="Imię i nazwisko odbiorcy">
+                        <input type="text" class="std-input" id="klientInput" placeholder="Imię i nazwisko lub login" value="{{ zalogowany_klient.login if zalogowany_klient else '' }}">
                         <input type="text" class="std-input" id="adresInput" placeholder="Ulica, numer domu, kod pocztowy i miasto">
                         <button class="btn btn-success" onclick="zlozZamowienie()" style="width: 100%; padding: 14px;">
                             ✓ Potwierdź i złóż zamówienie
@@ -804,22 +966,61 @@
                 </div>
             </div>
 
-        <!-- WIDOK 3: LOGOWANIE KLIENTA -->
-        {% elif widok == 'logowanie' %}
-            <div class="koszyk-grid" style="max-width: 620px; margin: 0 auto; grid-template-columns: 1fr;">
-                <div class="panel-card">
-                    <h2>Zaloguj się lub utwórz konto klienta</h2>
-                    <p class="panel-subtitle">Podaj swoje dane, aby zapisać konto klienta w systemie sklepu „Złoty Haczyk”.</p>
+        <!-- WIDOK 3: PODSTRONA PROFIL KLIENTA -->
+        {% elif widok == 'profil' %}
+            {% if zalogowany_klient %}
+                <div class="panel-card" style="max-width: 820px; margin: 0 auto;">
+                    <div class="profil-header">
+                        <div class="profil-info">
+                            <div class="profil-avatar">{{ zalogowany_klient.login[0] }}</div>
+                            <div>
+                                <h2 style="margin-bottom: 2px;">{{ zalogowany_klient.login }}</h2>
+                                <p style="color: var(--text-secondary); font-size: 0.92rem;">{{ zalogowany_klient.email }}</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-danger" onclick="wylogujKlienta()" style="padding: 10px 18px; font-size: 0.88rem;">
+                            Wyloguj się
+                        </button>
+                    </div>
+
+                    <h3>Twoje zamówienia w sklepie</h3>
+                    {% if zamowienia_klienta %}
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr><th>Nr zamówienia</th><th>Zamówione produkty</th><th>Adres dostawy</th><th>Kwota</th><th>Data</th></tr>
+                                </thead>
+                                <tbody>
+                                    {% for z in zamowienia_klienta %}
+                                    <tr>
+                                        <td><strong>#{{ z.id }}</strong></td>
+                                        <td>{{ z.produkty_lista }}</td>
+                                        <td>{{ z.adres }}</td>
+                                        <td><strong style="color: var(--accent);">{{ "%.2f"|format(z.suma) }} zł</strong></td>
+                                        <td>{{ z.data_zamowienia }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <p style="color: var(--text-secondary); font-size: 0.92rem;">Nie złożyłeś jeszcze żadnego zamówienia na tym koncie.</p>
+                    {% endif %}
+                </div>
+            {% else %}
+                <div class="panel-card" style="max-width: 540px; margin: 0 auto;">
+                    <h2>Zaloguj się do profilu klienta</h2>
+                    <p class="panel-subtitle">Podaj swoje dane, aby przejść do profilu klienta i zapisać konto w bazie.</p>
                     <div class="formularz-grupa">
-                        <input type="text" class="std-input" id="loginInput" placeholder="Twój login lub imię i nazwisko">
+                        <input type="text" class="std-input" id="loginInput" placeholder="Twój login lub imię">
                         <input type="email" class="std-input" id="emailInput" placeholder="Adres e-mail">
-                        <input type="password" class="std-input" id="hasloInput" placeholder="Hasło do konta">
+                        <input type="password" class="std-input" id="hasloInput" placeholder="Hasło" onkeydown="if(event.key==='Enter') zalogujUzytkownika()">
                         <button class="btn btn-primary" onclick="zalogujUzytkownika()">Zaloguj się</button>
                     </div>
                 </div>
-            </div>
+            {% endif %}
 
-        <!-- WIDOK 4: REGULAMIN (PODSTRONA ZE STOPKI) -->
+        <!-- WIDOK 4: REGULAMIN -->
         {% elif widok == 'regulamin' %}
             <div class="panel-card">
                 <h2>Regulamin Sklepu Internetowego „Złoty Haczyk”</h2>
@@ -838,7 +1039,7 @@
                 <p>1. Dane klientów logujących się na stronie oraz składających zamówienia są przechowywane w bazie danych sklepu wyłącznie w celu realizacji zamówień oraz obsługi konta użytkownika.</p>
             </div>
 
-        <!-- WIDOK 5: KONTAKT (PODSTRONA ZE STOPKI) -->
+        <!-- WIDOK 5: KONTAKT -->
         {% elif widok == 'kontakt' %}
             <div class="koszyk-grid">
                 <div class="panel-card">
@@ -867,7 +1068,7 @@
                 </div>
             </div>
 
-        <!-- WIDOK 6: REKLAMACJE I ZWROTY (PODSTRONA ZE STOPKI) -->
+        <!-- WIDOK 6: REKLAMACJE I ZWROTY -->
         {% elif widok == 'reklamacje' %}
             <div class="panel-card">
                 <h2>Reklamacje, Zwroty i Gwarancja</h2>
@@ -886,10 +1087,8 @@
                 <p>Wszystkie wędki wysyłamy w grubych, usztywnianych tubach kartonowych. W razie zauważenia uszkodzenia tuby przy odbiorze prosimy o spisanie protokołu szkody z kurierem.</p>
             </div>
 
-        <!-- WIDOK 7: PANEL ADMINISTRATORA (PODSTRONA ZE STOPKI) -->
+        <!-- WIDOK 7: PANEL ADMINISTRATORA (ZE STOPKI) -->
         {% elif widok == 'admin' %}
-
-            <!-- EKRAN LOGOWANIA ADMINA (GDY NIEZALOGOWANY) -->
             <div id="adminLoginSekcja" style="display: {{ 'none' if admin_zalogowany else 'block' }};">
                 <div class="admin-login-box">
                     <div class="admin-lock-icon">🔒</div>
@@ -905,7 +1104,6 @@
                 </div>
             </div>
 
-            <!-- WŁAŚCIWY PANEL ADMINA (PO PODANIU tymek / alan) -->
             <div id="adminDashboardSekcja" style="display: {{ 'block' if admin_zalogowany else 'none' }};">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
                     <div>
@@ -917,7 +1115,6 @@
                     </button>
                 </div>
 
-                <!-- KARTY STATYSTYK -->
                 <div class="admin-stats-grid">
                     <div class="admin-stat-card">
                         <span>Zarejestrowani klienci</span>
@@ -933,7 +1130,6 @@
                     </div>
                 </div>
 
-                <!-- SEKCJA 1: BAZA KLIENTÓW I HISTORIA LOGOWAŃ -->
                 <div class="koszyk-grid" style="margin-bottom: 24px; grid-template-columns: 1fr 1fr;">
                     <div class="panel-card">
                         <h2>👥 Baza Kont Klientów</h2>
@@ -962,7 +1158,6 @@
                     </div>
                 </div>
 
-                <!-- SEKCJA 2: ZŁOŻONE ZAMÓWIENIA -->
                 <div class="panel-card" style="margin-bottom: 24px;">
                     <h2>📦 Złożone Zamówienia Klientów</h2>
                     <p class="panel-subtitle">Wszystkie zamówienia przesłane przez koszyk zakupowy.</p>
@@ -976,7 +1171,6 @@
                     </div>
                 </div>
 
-                <!-- SEKCJA 3: DODAWANIE I EDYCJA PRODUKTÓW -->
                 <div class="panel-card" style="margin-bottom: 24px;">
                     <h2>➕ Dodaj nowy produkt do sklepu</h2>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 14px;">
@@ -1010,7 +1204,7 @@
 
     </main>
 
-    <!-- ROZBUDOWANA STOPKA Z REGULAMINEM, KONTAKTEM, REKLAMACJAMI I PANELEM ADMINA -->
+    <!-- STOPKA -->
     <footer class="site-footer">
         <div class="footer-grid">
             <div class="footer-col">
@@ -1024,6 +1218,7 @@
                     <li><a href="/regulamin">📄 Regulamin sklepu</a></li>
                     <li><a href="/reklamacje">🛡️ Reklamacje i zwroty (14 dni)</a></li>
                     <li><a href="/kontakt">📞 Kontakt i biuro obsługi</a></li>
+                    <li><a href="/ulubione">❤️ Ulubione produkty</a></li>
                     <li><a href="/koszyk">🛒 Twój koszyk zakupowy</a></li>
                 </ul>
             </div>
@@ -1058,6 +1253,7 @@
         const aktualnaKategoria = "{{ wybrana_kategoria }}";
         const aktualnyWidok = "{{ widok }}";
         const czyAdminZalogowany = {{ 'true' if admin_zalogowany else 'false' }};
+        let aktualneSortowanie = 'domyslne';
 
         // ==================== POWIADOMIENIA TOAST ====================
         function pokazPowiadomienie(tytul, opis, typ = 'sukces') {
@@ -1092,6 +1288,132 @@
                 'Akcesoria': { klasa: 'wizual-akcesoria', ikona: '🧰' }
             };
             return mapa[kategoria] || { klasa: 'wizual-akcesoria', ikona: '🎣' };
+        }
+
+        // ==================== ULUBIONE PRODUKTY W COOKIES ====================
+        function pobierzUlubione() {
+            const ciasteczka = document.cookie.split('; ');
+            const wpis = ciasteczka.find(row => row.startsWith('ulubione_produkty='));
+            if (!wpis) return [];
+            try {
+                const wartosc = decodeURIComponent(wpis.split('=')[1]);
+                const lista = JSON.parse(wartosc);
+                return Array.isArray(lista) ? lista : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function zapiszUlubione(listaId) {
+            const zakodowane = encodeURIComponent(JSON.stringify(listaId));
+            // Zapis w pliku cookie na 30 dni (2592000 sekund)
+            document.cookie = `ulubione_produkty=${zakodowane}; path=/; max-age=2592000; SameSite=Lax`;
+            aktualizujLicznikUlubionych();
+        }
+
+        function aktualizujLicznikUlubionych() {
+            const ulubione = pobierzUlubione();
+            const badge = document.getElementById('licznikUlubionych');
+            if (!badge) return;
+            badge.textContent = ulubione.length;
+            badge.style.transform = 'scale(1.25)';
+            setTimeout(() => badge.style.transform = 'scale(1)', 200);
+        }
+
+        function przelaczUlubione(id, nazwa, przycisk) {
+            let ulubione = pobierzUlubione();
+            const indeks = ulubione.indexOf(id);
+
+            if (indeks === -1) {
+                ulubione.push(id);
+                zapiszUlubione(ulubione);
+                if (przycisk) {
+                    przycisk.classList.add('polubiony');
+                    przycisk.textContent = '❤️';
+                }
+                pokazPowiadomienie('Dodano do ulubionych', `${nazwa} (zapisano w cookies)`, 'sukces');
+            } else {
+                ulubione.splice(indeks, 1);
+                zapiszUlubione(ulubione);
+                if (przycisk) {
+                    przycisk.classList.remove('polubiony');
+                    przycisk.textContent = '🤍';
+                }
+                pokazPowiadomienie('Usunięto z ulubionych', nazwa, 'blad');
+                if (aktualnyWidok === 'ulubione') {
+                    wyswietlUlubione();
+                }
+            }
+        }
+
+        function wyczyscWszystkieUlubione() {
+            zapiszUlubione([]);
+            wyswietlUlubione();
+            pokazPowiadomienie('Wyczyszczono ulubione', 'Usunięto wszystkie produkty z pliku cookie.', 'blad');
+        }
+
+        function renderujKartyProduktow(produkty, kontener) {
+            const ulubione = pobierzUlubione();
+            kontener.innerHTML = produkty.map(p => {
+                const wizual = stylKategorii(p.kategoria);
+                const czyUlubiony = ulubione.includes(p.id);
+                return `
+                <article class="karta">
+                    <div>
+                        <div class="karta-wizual ${wizual.klasa}">
+                            <span class="kategoria-pill">${p.kategoria}</span>
+                            ${p.dostepnosc
+                                ? '<span class="status-pill status-ok"><span class="status-dot"></span>W magazynie</span>'
+                                : '<span class="status-pill status-brak"><span class="status-dot"></span>Wyprzedane</span>'}
+                            <div class="karta-ikona">${wizual.ikona}</div>
+                        </div>
+                        <div class="karta-body">
+                            <h3>${p.nazwa}</h3>
+                            <p>${p.opis}</p>
+                        </div>
+                    </div>
+                    <div class="karta-footer">
+                        <div class="cena-blok">
+                            <small>Cena brutto</small>
+                            <span class="cena">${Number(p.cena).toFixed(2)} zł</span>
+                        </div>
+                        <div class="karta-akcje">
+                            <button class="btn-fav ${czyUlubiony ? 'polubiony' : ''}"
+                                    title="Dodaj lub usuń z ulubionych"
+                                    onclick='przelaczUlubione(${p.id}, ${JSON.stringify(p.nazwa)}, this)'>
+                                ${czyUlubiony ? '❤️' : '🤍'}
+                            </button>
+                            ${p.dostepnosc
+                                ? `<button class="btn-add-cart" onclick='dodajDoKoszyka(${p.id}, ${JSON.stringify(p.nazwa)}, ${p.cena})'>
+                                    🛒 Do koszyka
+                                   </button>`
+                                : `<span style="color: var(--text-muted); font-size: 0.8rem; font-weight: 700;">Brak</span>`}
+                        </div>
+                    </div>
+                </article>`;
+            }).join('');
+        }
+
+        async function wyswietlUlubione() {
+            const ulubioneIds = pobierzUlubione();
+            const kontener = document.getElementById('listaUlubionych');
+            const licznik = document.getElementById('licznikWynikowUlubione');
+
+            if (ulubioneIds.length === 0) {
+                licznik.textContent = '0 szt.';
+                kontener.innerHTML = `
+                    <div class="panel-card" style="grid-column: 1/-1; text-align:center; padding: 48px;">
+                        <h3>Brak ulubionych produktów w cookies</h3>
+                        <p class="panel-subtitle" style="margin-top:8px;">Kliknij ikonę serduszka 🤍 przy wybranym sprzęcie w katalogu, aby zapisać go na później.</p>
+                        <a href="/" class="btn btn-primary">Przejdź do katalogu produktów</a>
+                    </div>`;
+                return;
+            }
+
+            const odp = await fetch(`/api/produkty?ids=${ulubioneIds.join(',')}`);
+            const produkty = await odp.json();
+            licznik.textContent = `${produkty.length} szt.`;
+            renderujKartyProduktow(produkty, kontener);
         }
 
         // ==================== KOSZYK ZAKUPOWY ====================
@@ -1136,7 +1458,7 @@
             const sumaEl = document.getElementById('sumaKoszyka');
 
             if (koszyk.length === 0) {
-                kontener.innerHTML = '<p style="padding: 24px 0; color: var(--text-secondary);">Twój koszyk jest obecnie pusty. Przejdź do katalogu i wybierz sprzęt.</p>';
+                kontener.innerHTML = '<p style="padding: 24px 0; color: var(--text-secondary);">Twój koszyk jest obecnie pusty. Przejrzyj katalog i wybierz sprzęt.</p>';
                 sumaEl.textContent = '0.00 zł';
                 return;
             }
@@ -1188,19 +1510,35 @@
                 pokazPowiadomienie('Zamówienie złożone!', wynik.komunikat, 'sukces');
                 zapiszKoszyk([]);
                 wyswietlKoszyk();
-                document.getElementById('klientInput').value = '';
                 document.getElementById('adresInput').value = '';
             } else {
                 pokazPowiadomienie('Błąd formularza', wynik.komunikat, 'blad');
             }
         }
 
-        // ==================== KATALOG PRODUKTÓW ====================
+        // ==================== FILTROWANIE I PASEK SORTOWANIA ====================
+        function przelaczPasekFiltrow() {
+            const pasek = document.getElementById('pasekSortowania');
+            const czyUkryty = window.getComputedStyle(pasek).display === 'none';
+            pasek.style.display = czyUkryty ? 'flex' : 'none';
+            pobierzProdukty();
+        }
+
+        function ustawSortowanie(tryb, przycisk) {
+            aktualneSortowanie = tryb;
+            document.querySelectorAll('.sort-chip').forEach(btn => btn.classList.remove('aktywny'));
+            przycisk.classList.add('aktywny');
+            pobierzProdukty();
+        }
+
         async function pobierzProdukty() {
             const nazwa = document.getElementById('filtrNazwa').value;
             const cenaMax = document.getElementById('filtrCena').value;
 
-            const params = new URLSearchParams({ kategoria: aktualnaKategoria });
+            const params = new URLSearchParams({
+                kategoria: aktualnaKategoria,
+                sortuj: aktualneSortowanie
+            });
             if (nazwa) params.append('nazwa', nazwa);
             if (cenaMax) params.append('cena_max', cenaMax);
 
@@ -1220,46 +1558,21 @@
                 return;
             }
 
-            kontener.innerHTML = produkty.map(p => {
-                const wizual = stylKategorii(p.kategoria);
-                return `
-                <article class="karta">
-                    <div>
-                        <div class="karta-wizual ${wizual.klasa}">
-                            <span class="kategoria-pill">${p.kategoria}</span>
-                            ${p.dostepnosc
-                                ? '<span class="status-pill status-ok"><span class="status-dot"></span>W magazynie</span>'
-                                : '<span class="status-pill status-brak"><span class="status-dot"></span>Wyprzedane</span>'}
-                            <div class="karta-ikona">${wizual.ikona}</div>
-                        </div>
-                        <div class="karta-body">
-                            <h3>${p.nazwa}</h3>
-                            <p>${p.opis}</p>
-                        </div>
-                    </div>
-                    <div class="karta-footer">
-                        <div class="cena-blok">
-                            <small>Cena brutto</small>
-                            <span class="cena">${Number(p.cena).toFixed(2)} zł</span>
-                        </div>
-                        ${p.dostepnosc
-                            ? `<button class="btn-add-cart" onclick='dodajDoKoszyka(${p.id}, ${JSON.stringify(p.nazwa)}, ${p.cena})'>
-                                🛒 Do koszyka
-                               </button>`
-                            : `<span style="color: var(--text-muted); font-size: 0.82rem; font-weight: 700;">Niedostępny</span>`}
-                    </div>
-                </article>`;
-            }).join('');
+            renderujKartyProduktow(produkty, kontener);
         }
 
         function resetujFiltry() {
             document.getElementById('filtrNazwa').value = '';
             document.getElementById('filtrCena').value = '';
+            aktualneSortowanie = 'domyslne';
+            document.querySelectorAll('.sort-chip').forEach(btn => {
+                btn.classList.toggle('aktywny', btn.dataset.sort === 'domyslne');
+            });
             pobierzProdukty();
-            pokazPowiadomienie('Wyczyszczono filtry', 'Wyświetlam wszystkie produkty w kategorii.', 'sukces');
+            pokazPowiadomienie('Wyczyszczono filtry', 'Przywrócono domyślną kolejność produktów.', 'sukces');
         }
 
-        // ==================== LOGOWANIE KLIENTA ====================
+        // ==================== PROFIL KLIENTA ====================
         async function zalogujUzytkownika() {
             const login = document.getElementById('loginInput').value;
             const email = document.getElementById('emailInput').value;
@@ -1273,13 +1586,15 @@
 
             const wynik = await odp.json();
             if (wynik.sukces) {
-                pokazPowiadomienie('Zalogowano pomyślnie', wynik.komunikat, 'sukces');
-                document.getElementById('loginInput').value = '';
-                document.getElementById('emailInput').value = '';
-                document.getElementById('hasloInput').value = '';
+                window.location.reload();
             } else {
                 pokazPowiadomienie('Błąd logowania', wynik.komunikat, 'blad');
             }
+        }
+
+        async function wylogujKlienta() {
+            await fetch('/api/wyloguj', { method: 'POST' });
+            window.location.reload();
         }
 
         function wyslijKontakt() {
@@ -1294,7 +1609,7 @@
             pokazPowiadomienie('Wiadomość wysłana!', 'Dziękujemy za kontakt. Odpowiemy najszybciej jak to możliwe.', 'sukces');
         }
 
-        // ==================== LOGOWANIE I OBSŁUGA ADMINA (tymek / alan) ====================
+        // ==================== PANEL ADMINA (tymek / alan) ====================
         async function zalogujAdmina() {
             const login = document.getElementById('adminLoginInput').value;
             const haslo = document.getElementById('adminHasloInput').value;
@@ -1326,7 +1641,6 @@
         }
 
         async function zaladujPanelAdmina() {
-            // 1. Pobierz bazę klientów i historię logowań
             const odpKlienci = await fetch('/api/admin/klienci');
             if (odpKlienci.ok) {
                 const daneKlienci = await odpKlienci.json();
@@ -1353,7 +1667,6 @@
                     : '<tr><td colspan="4">Brak historii logowań.</td></tr>';
             }
 
-            // 2. Pobierz zamówienia
             const odpZam = await fetch('/api/zamowienia');
             const zamowienia = await odpZam.json();
             document.getElementById('statZamowienia').textContent = zamowienia.length;
@@ -1373,7 +1686,6 @@
                     </tr>`).join('')
                 : '<tr><td colspan="6">Brak złożonych zamówień.</td></tr>';
 
-            // 3. Pobierz produkty do edycji
             const odpProd = await fetch('/api/produkty');
             const produkty = await odpProd.json();
             document.getElementById('tabelaProduktowAdmin').innerHTML = produkty.map(p => `
@@ -1435,7 +1747,9 @@
 
         window.onload = () => {
             aktualizujLicznikKoszyka();
+            aktualizujLicznikUlubionych();
             if (aktualnyWidok === 'produkty') pobierzProdukty();
+            if (aktualnyWidok === 'ulubione') wyswietlUlubione();
             if (aktualnyWidok === 'koszyk') wyswietlKoszyk();
             if (aktualnyWidok === 'admin' && czyAdminZalogowany) zaladujPanelAdmina();
         };
