@@ -1,4 +1,4 @@
-# --- Kod wygenerowany przez AI ---
+
 import sqlite3
 import json
 
