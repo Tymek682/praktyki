@@ -11,6 +11,10 @@ def polacz_baze():
     conn.row_factory = sqlite3.Row
     return conn
 
+@app.context_processor
+def przekaz_dane_sesji():
+    return dict(zalogowany_klient=session.get('klient'))
+
 # ==================== PODSTRONY SKLEPU ====================
 @app.route('/')
 def strona_glowna():
@@ -36,13 +40,35 @@ def podstrona_zylki():
 def podstrona_akcesoria():
     return render_template('index.html', wybrana_kategoria='Akcesoria', widok='produkty')
 
+@app.route('/ulubione')
+def podstrona_ulubione():
+    return render_template('index.html', wybrana_kategoria='Ulubione', widok='ulubione')
+
 @app.route('/koszyk')
 def podstrona_koszyk():
     return render_template('index.html', wybrana_kategoria='Koszyk', widok='koszyk')
 
+@app.route('/profil')
 @app.route('/logowanie')
-def podstrona_logowanie():
-    return render_template('index.html', wybrana_kategoria='Logowanie', widok='logowanie')
+def podstrona_profil():
+    klient = session.get('klient')
+    zamowienia_klienta = []
+
+    if klient:
+        conn = polacz_baze()
+        wiersze = conn.execute(
+            "SELECT id, adres, produkty_lista, suma, data_zamowienia FROM zamowienia WHERE LOWER(klient) = LOWER(?) ORDER BY id DESC",
+            (klient['login'],)
+        ).fetchall()
+        conn.close()
+        zamowienia_klienta = [dict(w) for w in wiersze]
+
+    return render_template(
+        'index.html',
+        wybrana_kategoria='Profil',
+        widok='profil',
+        zamowienia_klienta=zamowienia_klienta
+    )
 
 # ==================== PODSTRONY ZE STOPKI ====================
 @app.route('/regulamin')
@@ -98,17 +124,28 @@ def api_admin_klienci():
         "logowania": [dict(l) for l in logowania]
     })
 
-# ==================== API: PRODUKTY (GET, POST, PUT, DELETE) ====================
+# ==================== API: PRODUKTY (FILTROWANIE, SORTOWANIE, ULUBIONE) ====================
 @app.route('/api/produkty', methods=['GET'])
 def api_pobierz_produkty():
     kategoria = request.args.get('kategoria', '').strip()
     nazwa = request.args.get('nazwa', '').strip()
     cena_max = request.args.get('cena_max', '').strip()
+    sortuj = request.args.get('sortuj', 'domyslne').strip()
+    ids_param = request.args.get('ids', None)
 
     zapytanie = "SELECT id, nazwa, opis, cena, kategoria, dostepnosc FROM produkty WHERE 1=1"
     parametry = []
 
-    if kategoria and kategoria != 'Wszystkie':
+    # Filtrowanie po konkretnych ID (używane przez podstronę Ulubione z cookies)
+    if ids_param is not None:
+        lista_id = [int(x) for x in ids_param.split(',') if x.strip().isdigit()]
+        if not lista_id:
+            return jsonify([])
+        znaki = ','.join(['?'] * len(lista_id))
+        zapytanie += f" AND id IN ({znaki})"
+        parametry.extend(lista_id)
+
+    if kategoria and kategoria not in ('Wszystkie', 'Ulubione'):
         zapytanie += " AND kategoria = ?"
         parametry.append(kategoria)
 
@@ -123,7 +160,15 @@ def api_pobierz_produkty():
         except ValueError:
             pass
 
-    zapytanie += " ORDER BY id DESC"
+    sortowanie_mapa = {
+        'domyslne': 'ORDER BY id DESC',
+        'cena_asc': 'ORDER BY cena ASC',
+        'cena_desc': 'ORDER BY cena DESC',
+        'nazwa_asc': 'ORDER BY nazwa COLLATE NOCASE ASC',
+        'nazwa_desc': 'ORDER BY nazwa COLLATE NOCASE DESC'
+    }
+    klauzula_sortowania = sortowanie_mapa.get(sortuj, 'ORDER BY id DESC')
+    zapytanie += f" {klauzula_sortowania}"
 
     conn = polacz_baze()
     wiersze = conn.execute(zapytanie, parametry).fetchall()
@@ -204,7 +249,7 @@ def api_pobierz_zamowienia():
     conn.close()
     return jsonify([dict(w) for w in wiersze])
 
-# ==================== API: LOGOWANIE KLIENTÓW ====================
+# ==================== API: LOGOWANIE I WYLOGOWANIE KLIENTA ====================
 @app.route('/api/zaloguj', methods=['POST'])
 def api_zaloguj():
     dane = request.get_json()
@@ -223,6 +268,7 @@ def api_zaloguj():
         if uzytkownik['haslo'] != haslo:
             conn.close()
             return jsonify({"sukces": False, "komunikat": "Błędne hasło dla tego loginu!"}), 401
+        email = uzytkownik['email']
     else:
         cursor.execute(
             "INSERT INTO uzytkownicy (login, email, haslo) VALUES (?, ?, ?)",
@@ -233,7 +279,13 @@ def api_zaloguj():
     conn.commit()
     conn.close()
 
-    return jsonify({"sukces": True, "komunikat": f"Witaj {login}! Twoje logowanie zostało zapisane."})
+    session['klient'] = {'login': login, 'email': email}
+    return jsonify({"sukces": True, "komunikat": f"Zalogowano jako {login}!"})
+
+@app.route('/api/wyloguj', methods=['POST'])
+def api_wyloguj():
+    session.pop('klient', None)
+    return jsonify({"sukces": True, "komunikat": "Wylogowano z profilu klienta."})
 
 if __name__ == '__main__':
     app.run(debug=True)
