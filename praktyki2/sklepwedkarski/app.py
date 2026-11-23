@@ -1,4 +1,4 @@
-# --- Kod wygenerowany przez AI ---
+
 from flask import Flask, request, jsonify, render_template, session
 import sqlite3
 
